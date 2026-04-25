@@ -1,0 +1,44 @@
+import { notFound } from "next/navigation";
+import { getDictionary, locales, type Locale } from "@/lib/i18n/dictionaries";
+import Header from "@/components/Header";
+import Hero from "@/components/Hero";
+import Stats from "@/components/Stats";
+import About from "@/components/About";
+import Services from "@/components/Services";
+import Process from "@/components/Process";
+import Projects from "@/components/Projects";
+import Testimonials from "@/components/Testimonials";
+import FAQ from "@/components/FAQ";
+import CTA from "@/components/CTA";
+import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
+
+export default async function LocaleHome({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  if (!locales.includes(locale as Locale)) notFound();
+  const t = getDictionary(locale as Locale);
+  const l = locale as Locale;
+
+  return (
+    <>
+      <Header locale={l} t={t} />
+      <main>
+        <Hero locale={l} t={t} />
+        <Stats t={t} />
+        <About locale={l} t={t} />
+        <Services t={t} />
+        <Process t={t} />
+        <Projects locale={l} t={t} />
+        <Testimonials t={t} />
+        <FAQ t={t} />
+        <CTA t={t} />
+        <Contact t={t} />
+      </main>
+      <Footer locale={l} t={t} />
+    </>
+  );
+}
