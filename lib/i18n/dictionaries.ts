@@ -62,12 +62,16 @@ export const dictionaries = {
       stackLabel: "Çalıştığım araçlar",
       stackGroups: [
         {
-          name: "Frontend",
-          items: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+          name: "Frontend & Mobil",
+          items: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Flutter"],
         },
         {
           name: "Backend",
-          items: ["Node.js", "Postgres", "Prisma", "REST / tRPC"],
+          items: ["Node.js", ".NET", "C#", "Postgres", "Prisma"],
+        },
+        {
+          name: "Oyun & 3D",
+          items: ["Unity", "C#"],
         },
         {
           name: "AI / Tooling",
@@ -75,7 +79,7 @@ export const dictionaries = {
         },
         {
           name: "Altyapı",
-          items: ["Vercel", "Cloudflare", "GitHub Actions"],
+          items: ["Vercel", "Firebase", "Cloudflare", "GitHub Actions"],
         },
       ],
     },
@@ -340,12 +344,16 @@ export const dictionaries = {
       stackLabel: "Tools I work with",
       stackGroups: [
         {
-          name: "Frontend",
-          items: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+          name: "Frontend & Mobile",
+          items: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Flutter"],
         },
         {
           name: "Backend",
-          items: ["Node.js", "Postgres", "Prisma", "REST / tRPC"],
+          items: ["Node.js", ".NET", "C#", "Postgres", "Prisma"],
+        },
+        {
+          name: "Game & 3D",
+          items: ["Unity", "C#"],
         },
         {
           name: "AI / Tooling",
@@ -353,7 +361,7 @@ export const dictionaries = {
         },
         {
           name: "Infrastructure",
-          items: ["Vercel", "Cloudflare", "GitHub Actions"],
+          items: ["Vercel", "Firebase", "Cloudflare", "GitHub Actions"],
         },
       ],
     },

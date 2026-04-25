@@ -79,6 +79,67 @@ export const ClaudeLogo = ({ className }: LogoProps) => (
   </svg>
 );
 
+export const UnityLogo = ({ className }: LogoProps) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.4"
+    strokeLinejoin="round"
+    strokeLinecap="round"
+    aria-hidden
+    className={className}
+  >
+    <path d="M12 2 21 7v10l-9 5-9-5V7z" />
+    <path d="M3 7l9 5 9-5M12 12v10" />
+  </svg>
+);
+
+export const DotNetLogo = ({ className }: LogoProps) => (
+  <svg {...baseSvg} className={className}>
+    <text
+      x="12"
+      y="16.5"
+      textAnchor="middle"
+      fontSize="8.5"
+      fontWeight="800"
+      fontFamily="ui-monospace, SFMono-Regular, monospace"
+      fill="currentColor"
+    >
+      .NET
+    </text>
+  </svg>
+);
+
+export const CSharpLogo = ({ className }: LogoProps) => (
+  <svg {...baseSvg} className={className}>
+    <text
+      x="12"
+      y="17"
+      textAnchor="middle"
+      fontSize="13"
+      fontWeight="800"
+      fontFamily="ui-monospace, SFMono-Regular, monospace"
+      fill="currentColor"
+    >
+      C#
+    </text>
+  </svg>
+);
+
+export const FlutterLogo = ({ className }: LogoProps) => (
+  <svg {...baseSvg} className={className}>
+    <path d="M14.314 0L2.3 12.001 6 15.7 21.684.012zM14.297 11.282L7.992 17.586 14.296 24h7.4l-6.305-6.408 6.305-6.31z" />
+  </svg>
+);
+
+export const FirebaseLogo = ({ className }: LogoProps) => (
+  <svg {...baseSvg} className={className}>
+    <path d="M3.89 15.673L6.255 4.13a.5.5 0 0 1 .9-.16l2.27 4.224-3.8 7.97a.501.501 0 0 1-1.735-.491zm17.046 1.054l-2.067-12.7a.5.5 0 0 0-.864-.27l-13.014 13.7L12.318 22a1.5 1.5 0 0 0 1.475 0l7.13-3.95a.5.5 0 0 0 .013-.32zM12.96 5.36l-1.81 3.473-4.207 7.85 5.806-5.834 4.218-4.222a.5.5 0 0 0-.864-.27z" />
+  </svg>
+);
+
 export type TechLogo = {
   name: string;
   Icon: (props: LogoProps) => React.JSX.Element;
@@ -89,6 +150,11 @@ export const techLogos: TechLogo[] = [
   { name: "React", Icon: ReactLogo },
   { name: "TypeScript", Icon: TypeScriptLogo },
   { name: "Tailwind", Icon: TailwindLogo },
+  { name: ".NET", Icon: DotNetLogo },
+  { name: "C#", Icon: CSharpLogo },
+  { name: "Unity", Icon: UnityLogo },
+  { name: "Flutter", Icon: FlutterLogo },
+  { name: "Firebase", Icon: FirebaseLogo },
   { name: "Vercel", Icon: VercelLogo },
   { name: "Node.js", Icon: NodeLogo },
   { name: "Postgres", Icon: PostgresLogo },

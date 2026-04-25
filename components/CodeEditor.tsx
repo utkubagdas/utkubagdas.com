@@ -29,8 +29,9 @@ export default function CodeEditor() {
             <Prop>stack</Prop>
             <Op>:</Op> <Brace>[</Brace>
             <Str>"Next.js"</Str>
-            <Op>,</Op> <Str>"TypeScript"</Str>
-            <Op>,</Op> <Str>"Claude"</Str>
+            <Op>,</Op> <Str>".NET"</Str>
+            <Op>,</Op> <Str>"Flutter"</Str>
+            <Op>,</Op> <Str>"Unity"</Str>
             <Brace>]</Brace>
             <Op>,</Op>
           </Line>
@@ -51,6 +52,9 @@ export default function CodeEditor() {
             <Op>;</Op>
           </Line>
           <Line n={7}>
+            <Comment>{"// also: TypeScript · C# · Firebase · Claude"}</Comment>
+          </Line>
+          <Line n={8}>
             <Comment>{"// reach out → utku.bagdas@gmail.com"}</Comment>
           </Line>
         </code>
