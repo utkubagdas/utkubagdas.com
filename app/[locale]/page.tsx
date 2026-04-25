@@ -14,6 +14,8 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
 import ScrollUI from "@/components/ScrollUI";
+import CustomCursor from "@/components/CustomCursor";
+import StructuredData from "@/components/StructuredData";
 
 export default async function LocaleHome({
   params,
@@ -25,10 +27,21 @@ export default async function LocaleHome({
   const t = getDictionary(locale as Locale);
   const l = locale as Locale;
 
+  const sections = [
+    { id: "about", label: t.nav.about },
+    { id: "services", label: t.nav.services },
+    { id: "process", label: t.nav.process },
+    { id: "projects", label: t.nav.projects },
+    { id: "faq", label: t.nav.faq },
+    { id: "contact", label: t.nav.contact },
+  ];
+
   return (
     <>
+      <StructuredData locale={l} t={t} />
+      <CustomCursor />
       <ScrollReveal />
-      <ScrollUI />
+      <ScrollUI sections={sections} />
       <Header locale={l} t={t} />
       <main>
         <Hero locale={l} t={t} />

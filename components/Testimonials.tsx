@@ -1,5 +1,6 @@
 import type { Dictionary } from "@/lib/i18n/dictionaries";
 import SectionHeading from "./SectionHeading";
+import TiltCard from "./TiltCard";
 
 export default function Testimonials({ t }: { t: Dictionary }) {
   return (
@@ -12,12 +13,14 @@ export default function Testimonials({ t }: { t: Dictionary }) {
 
         <div className="mt-12 grid gap-4 md:grid-cols-2">
           {t.testimonials.items.map((item, i) => (
-            <figure
+            <TiltCard
               key={i}
               data-reveal
               data-reveal-delay={((i % 2) + 1) as 1 | 2}
+              intensity={3}
               className="glow-border relative rounded-xl border border-border bg-panel/40 p-8"
             >
+              <figure>
               <span
                 className="absolute -top-4 left-6 font-mono text-6xl leading-none text-accent/40"
                 aria-hidden
@@ -45,7 +48,8 @@ export default function Testimonials({ t }: { t: Dictionary }) {
                   </p>
                 </div>
               </figcaption>
-            </figure>
+              </figure>
+            </TiltCard>
           ))}
         </div>
       </div>

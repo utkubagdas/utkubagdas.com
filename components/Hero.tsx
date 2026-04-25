@@ -3,6 +3,7 @@ import LocalTime from "./LocalTime";
 import Spotlight from "./Spotlight";
 import Marquee from "./Marquee";
 import MagneticLink from "./MagneticLink";
+import CodeEditor from "./CodeEditor";
 
 export default function Hero({
   locale: _locale,
@@ -68,7 +69,7 @@ export default function Hero({
             </div>
           </div>
 
-          <aside className="reveal reveal-4 md:col-span-4">
+          <aside className="reveal reveal-4 flex flex-col gap-4 md:col-span-4">
             <div className="rounded-xl border border-border bg-panel/60 p-5 backdrop-blur">
               <div className="flex items-center justify-between border-b border-border/60 pb-3">
                 <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted">
@@ -89,6 +90,7 @@ export default function Hero({
                 />
               </dl>
             </div>
+            <CodeEditor />
           </aside>
         </div>
       </div>

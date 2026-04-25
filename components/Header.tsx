@@ -1,5 +1,7 @@
 import Link from "next/link";
 import type { Dictionary, Locale } from "@/lib/i18n/dictionaries";
+import MobileMenu from "./MobileMenu";
+import CommandPalette from "./CommandPalette";
 
 export default function Header({
   locale,
@@ -46,19 +48,34 @@ export default function Header({
         </nav>
 
         <div className="flex items-center gap-3">
+          <CommandPalette
+            locale={locale}
+            sections={navItems.map((n) => ({
+              id: n.href.replace("#", ""),
+              label: n.label,
+            }))}
+            labels={t.cmdk}
+          />
           <Link
             href={`/${otherLocale}`}
-            className="rounded-md border border-border px-2.5 py-1 font-mono text-xs text-muted transition hover:border-accent hover:text-accent"
+            className="hidden rounded-md border border-border px-2.5 py-1 font-mono text-xs text-muted transition hover:border-accent hover:text-accent md:inline-flex"
             aria-label={`Switch to ${otherLocale.toUpperCase()}`}
           >
             {t.langSwitch[otherLocale]}
           </Link>
           <a
             href="#contact"
-            className="hidden rounded-md bg-accent px-3 py-1.5 text-xs font-medium text-bg transition hover:bg-accent/90 sm:inline-flex"
+            className="hidden rounded-md bg-accent px-3 py-1.5 text-xs font-medium text-bg transition hover:bg-accent/90 md:inline-flex"
           >
             {t.nav.contact} →
           </a>
+          <MobileMenu
+            items={navItems}
+            currentLocale={locale}
+            otherLocale={otherLocale}
+            langLabel={t.langSwitch[otherLocale]}
+            contactLabel={t.nav.contact}
+          />
         </div>
       </div>
     </header>

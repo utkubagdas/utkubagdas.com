@@ -1,6 +1,7 @@
 import type { Dictionary } from "@/lib/i18n/dictionaries";
 import SectionHeading from "./SectionHeading";
 import ServiceIcon from "./ServiceIcon";
+import TiltCard from "./TiltCard";
 
 const icons = ["web", "site", "ai", "support"] as const;
 
@@ -16,11 +17,11 @@ export default function Services({ t }: { t: Dictionary }) {
 
         <div className="mt-12 grid gap-4 md:grid-cols-2">
           {t.services.items.map((item, i) => (
-            <article
+            <TiltCard
               key={item.title}
               data-reveal
               data-reveal-delay={((i % 4) + 1) as 1 | 2 | 3 | 4}
-              className="glow-border group relative flex flex-col rounded-xl border border-border bg-panel/40 p-6 transition hover:bg-panel"
+              className="glow-border group relative flex flex-col rounded-xl border border-border bg-panel/40 p-6 transition-colors hover:bg-panel"
             >
               <div className="flex items-center justify-between">
                 <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-bg/80 text-accent transition group-hover:border-accent/50">
@@ -46,7 +47,7 @@ export default function Services({ t }: { t: Dictionary }) {
                   </li>
                 ))}
               </ul>
-            </article>
+            </TiltCard>
           ))}
         </div>
       </div>

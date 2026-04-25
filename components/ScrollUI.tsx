@@ -2,13 +2,16 @@
 
 import { useEffect, useRef, useState } from "react";
 
-export default function ScrollUI() {
+type Section = { id: string; label: string };
+
+export default function ScrollUI({ sections = [] }: { sections?: Section[] }) {
   const [showTop, setShowTop] = useState(false);
+  const [activeId, setActiveId] = useState<string | null>(null);
   const progressRef = useRef<HTMLDivElement>(null);
   const rafRef = useRef<number | null>(null);
 
   useEffect(() => {
-    const sections = Array.from(
+    const sectionEls = Array.from(
       document.querySelectorAll<HTMLElement>("section[id]")
     );
     const navLinks = Array.from(
@@ -18,19 +21,16 @@ export default function ScrollUI() {
     const setActive = (id: string | null) => {
       navLinks.forEach((a) => {
         const target = a.getAttribute("href")?.replace("#", "") ?? "";
-        if (id && target === id) {
-          a.setAttribute("data-active", "true");
-        } else {
-          a.removeAttribute("data-active");
-        }
+        if (id && target === id) a.setAttribute("data-active", "true");
+        else a.removeAttribute("data-active");
       });
+      setActiveId(id);
     };
 
     const onScroll = () => {
       if (rafRef.current != null) return;
       rafRef.current = requestAnimationFrame(() => {
         rafRef.current = null;
-
         const doc = document.documentElement;
         const scrollTop = window.scrollY || doc.scrollTop;
         const scrollHeight = doc.scrollHeight - doc.clientHeight;
@@ -38,12 +38,11 @@ export default function ScrollUI() {
         if (progressRef.current) {
           progressRef.current.style.setProperty("--progress", `${pct}%`);
         }
-
         setShowTop(scrollTop > 500);
 
         const probe = scrollTop + window.innerHeight * 0.3;
         let current: string | null = null;
-        for (const s of sections) {
+        for (const s of sectionEls) {
           if (s.offsetTop <= probe) current = s.id;
         }
         setActive(current);
@@ -67,6 +66,42 @@ export default function ScrollUI() {
   return (
     <>
       <div ref={progressRef} className="scroll-progress" aria-hidden />
+
+      {sections.length > 0 && (
+        <nav
+          aria-label="Section navigation"
+          className="fixed right-5 top-1/2 z-40 hidden -translate-y-1/2 flex-col items-end gap-3 lg:flex"
+        >
+          {sections.map((s) => {
+            const isActive = activeId === s.id;
+            return (
+              <a
+                key={s.id}
+                href={`#${s.id}`}
+                aria-label={s.label}
+                title={s.label}
+                className="group relative flex items-center gap-3"
+              >
+                <span
+                  className={`whitespace-nowrap font-mono text-[10px] uppercase tracking-widest text-muted opacity-0 transition-opacity group-hover:opacity-100 ${
+                    isActive ? "opacity-100 text-accent" : ""
+                  }`}
+                >
+                  {s.label}
+                </span>
+                <span
+                  className={`block h-1.5 rounded-full transition-all ${
+                    isActive
+                      ? "w-6 bg-accent"
+                      : "w-1.5 bg-border group-hover:bg-muted"
+                  }`}
+                />
+              </a>
+            );
+          })}
+        </nav>
+      )}
+
       <button
         type="button"
         onClick={onBackToTop}

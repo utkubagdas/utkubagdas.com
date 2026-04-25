@@ -1,6 +1,7 @@
 import type { Dictionary, Locale } from "@/lib/i18n/dictionaries";
 import { projects, type Project } from "@/lib/projects";
 import SectionHeading from "./SectionHeading";
+import TiltCard from "./TiltCard";
 
 export default function Projects({
   locale,
@@ -48,9 +49,10 @@ function FeaturedCard({
   t: Dictionary;
 }) {
   return (
-    <article
+    <TiltCard
       data-reveal
-      className="glow-border group relative col-span-1 flex flex-col justify-between overflow-hidden rounded-xl border border-border bg-panel/40 p-6 transition hover:bg-panel md:col-span-3 md:p-10"
+      intensity={3}
+      className="glow-border group relative col-span-1 flex flex-col justify-between overflow-hidden rounded-xl border border-border bg-panel/40 p-6 transition-colors hover:bg-panel md:col-span-3 md:p-10"
     >
       <div
         className="pointer-events-none absolute -right-16 -top-16 h-72 w-72 rounded-full bg-accent/10 blur-3xl transition-opacity group-hover:opacity-100"
@@ -89,7 +91,7 @@ function FeaturedCard({
           {t.projects.year} · {p.year}
         </span>
       </div>
-    </article>
+    </TiltCard>
   );
 }
 
@@ -103,7 +105,7 @@ function Card({
   t: Dictionary;
 }) {
   return (
-    <article className="glow-border group relative flex flex-col rounded-xl border border-border bg-panel/40 p-6 transition hover:bg-panel">
+    <TiltCard className="glow-border group relative flex flex-col rounded-xl border border-border bg-panel/40 p-6 transition-colors hover:bg-panel">
       <div className="flex items-center justify-between">
         <h3 className="text-base font-medium text-white">{p.name}</h3>
         {p.status === "placeholder" && (
@@ -143,6 +145,6 @@ function Card({
           <span className="font-mono text-[10px] text-muted/70">—</span>
         )}
       </div>
-    </article>
+    </TiltCard>
   );
 }

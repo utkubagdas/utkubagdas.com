@@ -216,6 +216,18 @@ export const dictionaries = {
       contactTitle: "İletişim",
     },
     langSwitch: { tr: "TR", en: "EN" },
+    cmdk: {
+      placeholder: "Bir komut yaz veya bölüm ara…",
+      navigate: "Bölümler",
+      contact: "İletişim",
+      language: "Dil",
+      social: "Sosyal",
+      switchTo: "Diline geç:",
+      sendEmail: "E-posta gönder",
+      copyEmail: "E-postayı kopyala",
+      empty: "Eşleşen sonuç yok.",
+      hint: "↑↓ gez · ↵ seç · esc kapat",
+    },
   },
   en: {
     nav: {
@@ -427,6 +439,18 @@ export const dictionaries = {
       contactTitle: "Contact",
     },
     langSwitch: { tr: "TR", en: "EN" },
+    cmdk: {
+      placeholder: "Type a command or search a section…",
+      navigate: "Sections",
+      contact: "Contact",
+      language: "Language",
+      social: "Social",
+      switchTo: "Switch to",
+      sendEmail: "Send an email",
+      copyEmail: "Copy email",
+      empty: "No matching results.",
+      hint: "↑↓ navigate · ↵ select · esc close",
+    },
   },
 } as const;
 
