@@ -4,9 +4,12 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Stats from "@/components/Stats";
 import About from "@/components/About";
+import Currently from "@/components/Currently";
 import Services from "@/components/Services";
 import Process from "@/components/Process";
+import PullQuote from "@/components/PullQuote";
 import Projects from "@/components/Projects";
+import Journey from "@/components/Journey";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
@@ -16,6 +19,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 import ScrollUI from "@/components/ScrollUI";
 import CustomCursor from "@/components/CustomCursor";
 import StructuredData from "@/components/StructuredData";
+import SplashScreen from "@/components/SplashScreen";
 
 export default async function LocaleHome({
   params,
@@ -38,6 +42,7 @@ export default async function LocaleHome({
 
   return (
     <>
+      <SplashScreen />
       <StructuredData locale={l} t={t} />
       <CustomCursor />
       <ScrollReveal />
@@ -47,9 +52,12 @@ export default async function LocaleHome({
         <Hero locale={l} t={t} />
         <Stats t={t} />
         <About locale={l} t={t} />
+        <Currently t={t} />
         <Services t={t} />
         <Process t={t} />
+        <PullQuote t={t} />
         <Projects locale={l} t={t} />
+        <Journey t={t} />
         <Testimonials t={t} />
         <FAQ t={t} />
         <CTA t={t} />

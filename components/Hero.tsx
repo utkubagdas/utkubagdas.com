@@ -36,9 +36,9 @@ export default function Hero({
               {t.hero.tag}
             </div>
 
-            <h1 className="reveal reveal-2 text-5xl font-semibold leading-[1.05] tracking-tight text-white md:text-7xl lg:text-[5.5rem]">
+            <h1 className="reveal reveal-2 font-display text-6xl italic leading-[1.02] tracking-[-0.02em] text-white md:text-8xl lg:text-[7.5rem]" style={{ fontWeight: 400, fontVariationSettings: "'opsz' 144, 'SOFT' 50" }}>
               {t.hero.title}
-              <span className="text-accent">.</span>
+              <span className="not-italic text-accent">.</span>
             </h1>
 
             <p className="reveal reveal-3 mt-4 font-mono text-sm uppercase tracking-[0.2em] text-accent">

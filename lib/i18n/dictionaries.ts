@@ -79,6 +79,58 @@ export const dictionaries = {
         },
       ],
     },
+    currently: {
+      label: "Şu an / Now",
+      title: "Hayatın bu döneminde",
+      items: [
+        {
+          k: "Geliştiriyorum",
+          desc: "Claude Code ile şahıs şirketim için ürünler ve B2B müşterilerime özel yazılım çözümleri.",
+        },
+        {
+          k: "Okuyorum",
+          desc: "Working in Public — Nadia Eghbal. İnternet üretkenliği üzerine.",
+        },
+        {
+          k: "Dinliyorum",
+          desc: "Lo-fi ve ambient elektronik. Odaklanma için Brian Eno karışımları.",
+        },
+      ],
+    },
+    journey: {
+      label: "Yolculuk",
+      title: "Bugüne nasıl geldim",
+      items: [
+        {
+          year: "2026",
+          title: "Şahıs şirketi & freelance",
+          desc:
+            "Türkiye merkezli kendi şirketim üzerinden firmalara özel yazılım çözümleri sunmaya başladım.",
+        },
+        {
+          year: "2024",
+          title: "AI-first ürün geliştirme",
+          desc: "Claude Code ile çok daha hızlı ve sürdürülebilir kod üretmeye odaklandım.",
+        },
+        {
+          year: "2022",
+          title: "Full-stack geçiş",
+          desc:
+            "React + Node.js ekosisteminde tam yığın geliştirici olarak ürünleştirme deneyimi.",
+        },
+        {
+          year: "2020",
+          title: "Yazılıma giriş",
+          desc:
+            "Web teknolojileriyle ilk projelerimi yapmaya başladım; HTML / CSS / JavaScript temelleri.",
+        },
+      ],
+    },
+    pull: {
+      quote:
+        "Yazılımı, gerçek ürünlere — şirketinize değer katan, ölçeklenebilir ve sürdürülebilir çözümlere — çeviriyorum.",
+      attribution: "Çalışma felsefesi",
+    },
     services: {
       label: "02 — Hizmetler",
       title: "Sunduğum hizmetler",
@@ -304,6 +356,59 @@ export const dictionaries = {
           items: ["Vercel", "Cloudflare", "GitHub Actions"],
         },
       ],
+    },
+    currently: {
+      label: "Currently / Now",
+      title: "Where I'm at",
+      items: [
+        {
+          k: "Building",
+          desc: "Products for my own venture and custom software for B2B clients — all with Claude Code.",
+        },
+        {
+          k: "Reading",
+          desc: "Working in Public — Nadia Eghbal. On the makers of the internet.",
+        },
+        {
+          k: "Listening",
+          desc: "Lo-fi and ambient electronic. Brian Eno mixes for focus sessions.",
+        },
+      ],
+    },
+    journey: {
+      label: "Journey",
+      title: "How I got here",
+      items: [
+        {
+          year: "2026",
+          title: "Sole proprietorship & freelance",
+          desc:
+            "Started serving companies through my own Türkiye-based business with custom software solutions.",
+        },
+        {
+          year: "2024",
+          title: "AI-first product development",
+          desc:
+            "Doubled down on shipping faster, more sustainable code with Claude Code.",
+        },
+        {
+          year: "2022",
+          title: "Full-stack transition",
+          desc:
+            "Productizing experience as a full-stack developer in the React + Node.js ecosystem.",
+        },
+        {
+          year: "2020",
+          title: "Started in software",
+          desc:
+            "Shipped my first projects with web fundamentals — HTML / CSS / JavaScript.",
+        },
+      ],
+    },
+    pull: {
+      quote:
+        "I turn software into real products — scalable, sustainable solutions that move your company forward.",
+      attribution: "Working philosophy",
     },
     services: {
       label: "02 — Services",
