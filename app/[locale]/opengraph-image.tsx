@@ -5,7 +5,19 @@ export const alt = "Utku Bağdaş — Full-stack Developer";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-export default function OpengraphImage() {
+export default async function OpengraphImage({
+  params,
+}: {
+  params: { locale: string };
+}) {
+  const isTr = params.locale === "tr";
+  const lede = isTr
+    ? "Şirketler için ölçeklenebilir web uygulamaları ve özel yazılım çözümleri."
+    : "Scalable web applications and custom software for companies.";
+  const tag = isTr
+    ? "Müsait — yeni projelere açık"
+    : "Available — open to new projects";
+
   return new ImageResponse(
     (
       <div
@@ -22,13 +34,7 @@ export default function OpengraphImage() {
             "radial-gradient(800px 400px at 50% -10%, rgba(52,211,153,0.18), transparent 60%)",
         }}
       >
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: 12,
-          }}
-        >
+        <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
           <div
             style={{
               width: 36,
@@ -56,7 +62,7 @@ export default function OpengraphImage() {
               textTransform: "uppercase",
             }}
           >
-            utkubagdas.com
+            utkubagdas.com / {params.locale}
           </div>
         </div>
 
@@ -93,7 +99,7 @@ export default function OpengraphImage() {
               lineHeight: 1.4,
             }}
           >
-            Scalable web applications and custom software for companies.
+            {lede}
           </div>
         </div>
 
@@ -109,8 +115,8 @@ export default function OpengraphImage() {
             textTransform: "uppercase",
           }}
         >
-          <span>Available — open to new projects</span>
-          <span>TR / EN</span>
+          <span>{tag}</span>
+          <span>{isTr ? "TR / EN" : "EN / TR"}</span>
         </div>
       </div>
     ),

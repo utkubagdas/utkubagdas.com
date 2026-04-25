@@ -101,6 +101,14 @@ export const dictionaries = {
         },
       ],
     },
+    activity: {
+      label: "GitHub aktivitesi",
+      title: "Son commit'ler",
+      subtitle: "GitHub'da son halka açık aktivitem.",
+      empty: "Şu an gösterilecek halka açık aktivite yok.",
+      offline: "GitHub aktivitesi geçici olarak yüklenemedi.",
+      view: "Profili gör",
+    },
     journey: {
       label: "Yolculuk",
       title: "Bugüne nasıl geldim",
@@ -284,6 +292,125 @@ export const dictionaries = {
       empty: "Eşleşen sonuç yok.",
       hint: "↑↓ gez · ↵ seç · esc kapat",
     },
+    uses: {
+      title: "Kullandıklarım",
+      subtitle:
+        "Çalışma masamda olan donanım, yazılım ve günlük rutinime giren araçlar.",
+      backHome: "Ana sayfaya dön",
+      groups: [
+        {
+          name: "Donanım",
+          items: [
+            { k: "Bilgisayar", v: "MacBook Pro / Windows masaüstü" },
+            { k: "Monitör", v: "27\" 4K, ergonomik kol üzerinde" },
+            { k: "Klavye", v: "Mekanik, tactile switch" },
+            { k: "Mouse", v: "Logitech MX Master" },
+            { k: "Kulaklık", v: "Sony WH-1000XM5 (gürültü engelleme)" },
+            { k: "Mikrofon", v: "Shure MV7 (toplantı / kayıt)" },
+          ],
+        },
+        {
+          name: "Editör & Geliştirme",
+          items: [
+            { k: "Editör", v: "VS Code + Cursor" },
+            { k: "AI Eşi", v: "Claude Code (terminal)" },
+            { k: "Terminal", v: "Warp" },
+            { k: "Tarayıcı", v: "Arc, Chrome (DevTools)" },
+            { k: "Tema", v: "Karanlık, accent yeşil" },
+            { k: "Font", v: "Geist Mono, JetBrains Mono" },
+          ],
+        },
+        {
+          name: "Araçlar & Servisler",
+          items: [
+            { k: "Versiyonlama", v: "Git, GitHub" },
+            { k: "Hosting", v: "Vercel, Cloudflare" },
+            { k: "DB", v: "Postgres (Neon, Supabase)" },
+            { k: "Analitik", v: "Vercel Analytics, Plausible" },
+            { k: "İletişim", v: "Linear, Slack, Telegram" },
+            { k: "Tasarım", v: "Figma, FigJam" },
+          ],
+        },
+        {
+          name: "Tarayıcı eklentileri",
+          items: [
+            { k: "1Password", v: "Şifre yöneticisi" },
+            { k: "React DevTools", v: "Component inceleme" },
+            { k: "Wappalyzer", v: "Site stack tespiti" },
+            { k: "JSON Viewer", v: "API yanıtlarını biçimleme" },
+          ],
+        },
+      ],
+    },
+    now: {
+      title: "Şu an",
+      subtitle:
+        "Bu sayfa derek-sivers tarzı bir 'now' sayfası. Hayatımın bu döneminde nelere odaklandığımı paylaşıyorum.",
+      backHome: "Ana sayfaya dön",
+      updated: "Son güncelleme",
+      sections: [
+        {
+          h: "Üzerinde çalıştığım",
+          body:
+            "Şahıs şirketim üzerinden firmalara özel yazılım çözümleri geliştiriyorum. Çoğunlukla Next.js + TypeScript ekseninde, son dönemde mobil için Flutter ve oyun tarafında Unity ile de projeler üretiyorum.",
+        },
+        {
+          h: "Öğrendiğim",
+          body:
+            "Claude Code'un agent-based geliştirme yetkinliklerini derinleştiriyorum. AI'ın günlük geliştirme akışına nasıl en sürdürülebilir biçimde girdiğine dair pratik notlar tutuyorum.",
+        },
+        {
+          h: "Okuduğum",
+          body:
+            "Working in Public — Nadia Eghbal. İnternet üreticilerinin ekonomisi üzerine. Yan masada Kent Beck'in TDD klasiği duruyor.",
+        },
+        {
+          h: "Dinlediğim",
+          body:
+            "Lo-fi, Brian Eno ambient ve odaklanma için Helios karışımları. Kahve molalarında Türkçe podcast: 'Hidden Things'.",
+        },
+        {
+          h: "Konum",
+          body: "Türkiye, Istanbul. Uzaktan çalışıyor, gerektiğinde gidip görüşüyorum.",
+        },
+      ],
+    },
+    cv: {
+      title: "Özgeçmiş",
+      printLabel: "Yazdır / PDF olarak kaydet",
+      backHome: "Ana sayfaya dön",
+      headline: "Full-stack Developer",
+      summary:
+        "5+ yıllık deneyime sahip, end-to-end ürün geliştirme odaklı bir full-stack developer. Next.js, React, TypeScript ekosisteminde uzmanlaşmış; .NET, Flutter ve Unity ile çapraz alanlarda da üretim deneyimi var.",
+      experienceTitle: "Deneyim",
+      experience: [
+        {
+          year: "2026 — şu an",
+          role: "Bağımsız Yazılım Geliştirici",
+          company: "Şahıs Şirketi · Türkiye",
+          desc:
+            "Türkiye ve yurt dışından firmalara özel yazılım çözümleri sunuyorum. Web uygulamaları, AI entegrasyonları ve mobil ürünler.",
+        },
+        {
+          year: "2022 — 2026",
+          role: "Full-stack Developer",
+          company: "Çeşitli projeler",
+          desc:
+            "React + Node.js stack ile SaaS ürünleri ve iç araçlar geliştirdim.",
+        },
+      ],
+      educationTitle: "Eğitim",
+      education: [
+        {
+          year: "—",
+          role: "Bilgisayar Mühendisliği",
+          company: "Üniversite",
+          desc: "Lisans eğitimi.",
+        },
+      ],
+      skillsTitle: "Yetkinlikler",
+      contactTitle: "İletişim",
+    },
   },
   en: {
     nav: {
@@ -382,6 +509,14 @@ export const dictionaries = {
           desc: "Lo-fi and ambient electronic. Brian Eno mixes for focus sessions.",
         },
       ],
+    },
+    activity: {
+      label: "GitHub activity",
+      title: "Recent commits",
+      subtitle: "My latest public activity on GitHub.",
+      empty: "No public activity to show right now.",
+      offline: "GitHub activity is temporarily unavailable.",
+      view: "View profile",
     },
     journey: {
       label: "Journey",
@@ -563,6 +698,125 @@ export const dictionaries = {
       copyEmail: "Copy email",
       empty: "No matching results.",
       hint: "↑↓ navigate · ↵ select · esc close",
+    },
+    uses: {
+      title: "Uses",
+      subtitle:
+        "Hardware, software and tools I rely on daily.",
+      backHome: "Back home",
+      groups: [
+        {
+          name: "Hardware",
+          items: [
+            { k: "Computer", v: "MacBook Pro / Windows desktop" },
+            { k: "Monitor", v: "27\" 4K on an ergonomic arm" },
+            { k: "Keyboard", v: "Mechanical, tactile switches" },
+            { k: "Mouse", v: "Logitech MX Master" },
+            { k: "Headphones", v: "Sony WH-1000XM5 (noise-cancelling)" },
+            { k: "Microphone", v: "Shure MV7 (calls / recording)" },
+          ],
+        },
+        {
+          name: "Editor & Dev",
+          items: [
+            { k: "Editor", v: "VS Code + Cursor" },
+            { k: "AI Pair", v: "Claude Code (terminal)" },
+            { k: "Terminal", v: "Warp" },
+            { k: "Browser", v: "Arc, Chrome (DevTools)" },
+            { k: "Theme", v: "Dark, accent green" },
+            { k: "Font", v: "Geist Mono, JetBrains Mono" },
+          ],
+        },
+        {
+          name: "Tools & Services",
+          items: [
+            { k: "Versioning", v: "Git, GitHub" },
+            { k: "Hosting", v: "Vercel, Cloudflare" },
+            { k: "DB", v: "Postgres (Neon, Supabase)" },
+            { k: "Analytics", v: "Vercel Analytics, Plausible" },
+            { k: "Comms", v: "Linear, Slack, Telegram" },
+            { k: "Design", v: "Figma, FigJam" },
+          ],
+        },
+        {
+          name: "Browser extensions",
+          items: [
+            { k: "1Password", v: "Password manager" },
+            { k: "React DevTools", v: "Component inspection" },
+            { k: "Wappalyzer", v: "Detect site stack" },
+            { k: "JSON Viewer", v: "Format API responses" },
+          ],
+        },
+      ],
+    },
+    now: {
+      title: "Now",
+      subtitle:
+        "A derek-sivers style /now page. What I'm focused on at this period of life.",
+      backHome: "Back home",
+      updated: "Last updated",
+      sections: [
+        {
+          h: "Working on",
+          body:
+            "Building custom software for companies through my sole proprietorship. Mostly Next.js + TypeScript, with cross-platform Flutter and Unity work picking up.",
+        },
+        {
+          h: "Learning",
+          body:
+            "Going deeper into Claude Code's agent-based dev workflows. Keeping practical notes on how AI plugs into a sustainable everyday cycle.",
+        },
+        {
+          h: "Reading",
+          body:
+            "Working in Public — Nadia Eghbal. On the economics of internet creators. Kent Beck's TDD classic on the side desk.",
+        },
+        {
+          h: "Listening",
+          body:
+            "Lo-fi, Brian Eno ambient and Helios mixes for focus. Coffee breaks: Hidden Things podcast.",
+        },
+        {
+          h: "Location",
+          body: "Türkiye, Istanbul. Working remotely, traveling on demand.",
+        },
+      ],
+    },
+    cv: {
+      title: "Curriculum Vitae",
+      printLabel: "Print / Save as PDF",
+      backHome: "Back home",
+      headline: "Full-stack Developer",
+      summary:
+        "End-to-end product-focused full-stack developer with 5+ years of experience. Specialized in Next.js, React and TypeScript; with cross-domain shipping experience in .NET, Flutter and Unity.",
+      experienceTitle: "Experience",
+      experience: [
+        {
+          year: "2026 — present",
+          role: "Independent Software Developer",
+          company: "Sole Proprietorship · Türkiye",
+          desc:
+            "Custom software solutions for companies in Türkiye and abroad. Web applications, AI integrations and mobile products.",
+        },
+        {
+          year: "2022 — 2026",
+          role: "Full-stack Developer",
+          company: "Various projects",
+          desc:
+            "Shipped SaaS products and internal tools with the React + Node.js stack.",
+        },
+      ],
+      educationTitle: "Education",
+      education: [
+        {
+          year: "—",
+          role: "Computer Engineering",
+          company: "University",
+          desc: "Bachelor's degree.",
+        },
+      ],
+      skillsTitle: "Skills",
+      contactTitle: "Contact",
     },
   },
 } as const;

@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function NotFound() {
+export default function LocaleNotFound() {
   return (
     <main className="relative flex min-h-screen items-center justify-center overflow-hidden px-6">
       <div

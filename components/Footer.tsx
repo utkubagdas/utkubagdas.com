@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Dictionary, Locale } from "@/lib/i18n/dictionaries";
 import { contactEmail, socials } from "@/lib/social";
 
@@ -10,12 +11,17 @@ export default function Footer({
 }) {
   const year = new Date().getFullYear();
   const navItems = [
-    { href: "#about", label: t.nav.about },
-    { href: "#services", label: t.nav.services },
-    { href: "#process", label: t.nav.process },
-    { href: "#projects", label: t.nav.projects },
-    { href: "#faq", label: t.nav.faq },
-    { href: "#contact", label: t.nav.contact },
+    { href: `/${locale}#about`, label: t.nav.about },
+    { href: `/${locale}#services`, label: t.nav.services },
+    { href: `/${locale}#process`, label: t.nav.process },
+    { href: `/${locale}#projects`, label: t.nav.projects },
+    { href: `/${locale}#faq`, label: t.nav.faq },
+    { href: `/${locale}#contact`, label: t.nav.contact },
+  ];
+  const subPages = [
+    { href: `/${locale}/uses`, label: "/uses" },
+    { href: `/${locale}/now`, label: "/now" },
+    { href: `/${locale}/cv`, label: "/cv" },
   ];
 
   return (
@@ -36,14 +42,14 @@ export default function Footer({
           </div>
 
           <FooterCol title={t.footer.navTitle}>
-            {navItems.map((it) => (
-              <a
+            {[...navItems, ...subPages].map((it) => (
+              <Link
                 key={it.href}
                 href={it.href}
                 className="text-sm text-white/80 transition hover:text-accent"
               >
                 {it.label}
-              </a>
+              </Link>
             ))}
           </FooterCol>
 
@@ -71,6 +77,14 @@ export default function Footer({
             <span className="font-mono text-[11px] uppercase tracking-widest text-muted">
               utkubagdas.com
             </span>
+            <a
+              href="https://github.com/utkubagdas/utkubagdas.com"
+              target="_blank"
+              rel="noreferrer"
+              className="font-mono text-[11px] uppercase tracking-widest text-muted/80 transition hover:text-accent"
+            >
+              ↗ source code
+            </a>
           </FooterCol>
         </div>
 
