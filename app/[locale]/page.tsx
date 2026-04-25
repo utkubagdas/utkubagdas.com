@@ -12,6 +12,8 @@ import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import ScrollReveal from "@/components/ScrollReveal";
+import ScrollUI from "@/components/ScrollUI";
 
 export default async function LocaleHome({
   params,
@@ -25,6 +27,8 @@ export default async function LocaleHome({
 
   return (
     <>
+      <ScrollReveal />
+      <ScrollUI />
       <Header locale={l} t={t} />
       <main>
         <Hero locale={l} t={t} />

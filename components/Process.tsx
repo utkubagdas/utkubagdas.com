@@ -8,9 +8,11 @@ export default function Process({ t }: { t: Dictionary }) {
         <SectionHeading label={t.process.label} title={t.process.title} />
 
         <ol className="mt-12 grid gap-px overflow-hidden rounded-xl border border-border bg-border md:grid-cols-4">
-          {t.process.steps.map((s) => (
+          {t.process.steps.map((s, i) => (
             <li
               key={s.k}
+              data-reveal
+              data-reveal-delay={((i % 4) + 1) as 1 | 2 | 3 | 4}
               className="relative flex flex-col gap-3 bg-panel/40 p-6 transition hover:bg-panel"
             >
               <span className="font-mono text-xs text-accent">{s.k}</span>

@@ -2,6 +2,7 @@ import type { Dictionary, Locale } from "@/lib/i18n/dictionaries";
 import LocalTime from "./LocalTime";
 import Spotlight from "./Spotlight";
 import Marquee from "./Marquee";
+import MagneticLink from "./MagneticLink";
 
 export default function Hero({
   locale: _locale,
@@ -49,21 +50,21 @@ export default function Hero({
             </p>
 
             <div className="reveal reveal-4 mt-10 flex flex-wrap gap-3">
-              <a
+              <MagneticLink
                 href="#projects"
-                className="group inline-flex items-center gap-2 rounded-md bg-accent px-5 py-2.5 text-sm font-medium text-bg transition hover:bg-accent/90"
+                className="group inline-flex items-center gap-2 rounded-md bg-accent px-5 py-2.5 text-sm font-medium text-bg hover:bg-accent/90"
               >
                 {t.hero.cta}
                 <span className="transition-transform group-hover:translate-x-0.5" aria-hidden>
                   →
                 </span>
-              </a>
-              <a
+              </MagneticLink>
+              <MagneticLink
                 href="#contact"
-                className="inline-flex items-center gap-2 rounded-md border border-border bg-panel/60 px-5 py-2.5 text-sm font-medium text-white backdrop-blur transition hover:border-accent hover:text-accent"
+                className="inline-flex items-center gap-2 rounded-md border border-border bg-panel/60 px-5 py-2.5 text-sm font-medium text-white backdrop-blur hover:border-accent hover:text-accent"
               >
                 {t.hero.ctaSecondary}
-              </a>
+              </MagneticLink>
             </div>
           </div>
 

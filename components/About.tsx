@@ -14,7 +14,7 @@ export default function About({
         <SectionHeading label={t.about.label} title={t.about.title} />
 
         <div className="mt-12 grid gap-12 md:grid-cols-12">
-          <div className="md:col-span-7">
+          <div data-reveal data-reveal-delay="1" className="md:col-span-7">
             <p className="text-lg leading-relaxed text-white/85">
               {t.about.body}
             </p>
@@ -44,7 +44,7 @@ export default function About({
             </ol>
           </div>
 
-          <div className="md:col-span-5">
+          <div data-reveal data-reveal-delay="2" className="md:col-span-5">
             <div className="rounded-xl border border-border bg-panel/40 p-6">
               <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted">
                 {t.about.stackLabel}

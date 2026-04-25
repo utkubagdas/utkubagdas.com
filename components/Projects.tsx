@@ -23,8 +23,14 @@ export default function Projects({
 
         <div className="mt-12 grid gap-4 md:grid-cols-3">
           <FeaturedCard project={featured} locale={locale} t={t} />
-          {rest.map((p) => (
-            <Card key={p.slug} project={p} locale={locale} t={t} />
+          {rest.map((p, i) => (
+            <div
+              key={p.slug}
+              data-reveal
+              data-reveal-delay={((i % 3) + 1) as 1 | 2 | 3}
+            >
+              <Card project={p} locale={locale} t={t} />
+            </div>
           ))}
         </div>
       </div>
@@ -42,7 +48,10 @@ function FeaturedCard({
   t: Dictionary;
 }) {
   return (
-    <article className="glow-border group relative col-span-1 flex flex-col justify-between overflow-hidden rounded-xl border border-border bg-panel/40 p-6 transition hover:bg-panel md:col-span-3 md:p-10">
+    <article
+      data-reveal
+      className="glow-border group relative col-span-1 flex flex-col justify-between overflow-hidden rounded-xl border border-border bg-panel/40 p-6 transition hover:bg-panel md:col-span-3 md:p-10"
+    >
       <div
         className="pointer-events-none absolute -right-16 -top-16 h-72 w-72 rounded-full bg-accent/10 blur-3xl transition-opacity group-hover:opacity-100"
         aria-hidden

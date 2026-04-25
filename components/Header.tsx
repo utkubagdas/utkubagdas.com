@@ -37,6 +37,7 @@ export default function Header({
             <a
               key={item.href}
               href={item.href}
+              data-nav-link
               className="text-sm text-muted transition hover:text-white"
             >
               {item.label}

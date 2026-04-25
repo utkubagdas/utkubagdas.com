@@ -14,7 +14,7 @@ export default function Contact({ t }: { t: Dictionary }) {
         />
 
         <div className="mt-12 grid gap-8 md:grid-cols-2">
-          <div className="rounded-xl border border-border bg-panel/40 p-6">
+          <div data-reveal data-reveal-delay="1" className="rounded-xl border border-border bg-panel/40 p-6">
             <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted">
               {t.contact.emailLabel}
             </p>
@@ -33,7 +33,7 @@ export default function Contact({ t }: { t: Dictionary }) {
             </div>
           </div>
 
-          <div className="rounded-xl border border-border bg-panel/40 p-6">
+          <div data-reveal data-reveal-delay="2" className="rounded-xl border border-border bg-panel/40 p-6">
             <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted">
               {t.contact.socialLabel}
             </p>

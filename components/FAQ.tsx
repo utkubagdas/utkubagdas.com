@@ -16,7 +16,7 @@ export default function FAQ({ t }: { t: Dictionary }) {
           {t.faq.items.map((item, i) => {
             const isOpen = open === i;
             return (
-              <li key={i}>
+              <li key={i} data-reveal data-reveal-delay={((i % 4) + 1) as 1 | 2 | 3 | 4}>
                 <button
                   type="button"
                   onClick={() => setOpen(isOpen ? null : i)}

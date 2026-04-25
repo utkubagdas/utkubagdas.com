@@ -14,6 +14,8 @@ export default function Testimonials({ t }: { t: Dictionary }) {
           {t.testimonials.items.map((item, i) => (
             <figure
               key={i}
+              data-reveal
+              data-reveal-delay={((i % 2) + 1) as 1 | 2}
               className="glow-border relative rounded-xl border border-border bg-panel/40 p-8"
             >
               <span

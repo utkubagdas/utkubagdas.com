@@ -5,7 +5,7 @@ export default function CTA({ t }: { t: Dictionary }) {
   return (
     <section className="border-b border-border py-24 md:py-28">
       <div className="mx-auto max-w-6xl px-6">
-        <div className="relative overflow-hidden rounded-2xl border border-border bg-panel/60 p-10 md:p-16">
+        <div data-reveal className="relative overflow-hidden rounded-2xl border border-border bg-panel/60 p-10 md:p-16">
           <div
             className="pointer-events-none absolute -top-24 left-1/2 h-72 w-[40rem] -translate-x-1/2 rounded-full bg-accent/15 blur-3xl"
             aria-hidden

@@ -8,7 +8,7 @@ export default function SectionHeading({
   subtitle?: string;
 }) {
   return (
-    <div>
+    <div data-reveal>
       <div className="flex items-center gap-3">
         <span className="section-rule" aria-hidden />
         <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-accent">

@@ -18,6 +18,8 @@ export default function Services({ t }: { t: Dictionary }) {
           {t.services.items.map((item, i) => (
             <article
               key={item.title}
+              data-reveal
+              data-reveal-delay={((i % 4) + 1) as 1 | 2 | 3 | 4}
               className="glow-border group relative flex flex-col rounded-xl border border-border bg-panel/40 p-6 transition hover:bg-panel"
             >
               <div className="flex items-center justify-between">
