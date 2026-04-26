@@ -69,12 +69,13 @@ export default function MobileMenu({
       >
         <div
           onClick={() => setOpen(false)}
-          className={`absolute inset-0 bg-bg/95 backdrop-blur-md transition-opacity duration-300 ${
+          className={`absolute inset-0 bg-black/85 backdrop-blur-xl transition-opacity duration-300 ${
             open ? "opacity-100" : "opacity-0"
           }`}
         />
         <div
-          className={`absolute inset-y-0 right-0 flex w-full max-w-sm flex-col border-l border-border bg-panel transition-transform duration-300 ${
+          style={{ backgroundColor: "#0a0b0e", boxShadow: "-24px 0 60px rgba(0,0,0,0.6)" }}
+          className={`absolute inset-y-0 right-0 flex w-full max-w-sm flex-col border-l border-border transition-transform duration-300 ${
             open ? "translate-x-0" : "translate-x-full"
           }`}
         >
