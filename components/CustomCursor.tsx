@@ -104,16 +104,14 @@ export default function CustomCursor() {
       <div
         ref={dotRef}
         aria-hidden
-        className={`pointer-events-none fixed left-0 top-0 z-[100] h-1.5 w-1.5 rounded-full bg-accent transition-opacity duration-200 ${
+        className={`ub-cursor-blend pointer-events-none fixed left-0 top-0 z-[100] h-1.5 w-1.5 rounded-full bg-accent transition-opacity duration-200 ${
           variant === "text" ? "opacity-0" : "opacity-100"
         }`}
-        style={{ mixBlendMode: "screen" }}
       />
       <div
         ref={ringRef}
         aria-hidden
-        className={`pointer-events-none fixed left-0 top-0 z-[100] rounded-full border transition-[width,height,opacity,background] duration-200 ${ringSize}`}
-        style={{ mixBlendMode: "screen" }}
+        className={`ub-cursor-blend pointer-events-none fixed left-0 top-0 z-[100] rounded-full border transition-[width,height,opacity,background] duration-200 ${ringSize}`}
       />
       {label && (
         <div

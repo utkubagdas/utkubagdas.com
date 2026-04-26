@@ -259,6 +259,10 @@ section[id] {
   .depth-1, .depth-2, .depth-3, .depth-4 { transform: none !important; }
 }
 
+/* Custom cursor blend mode — screen on dark, normal on light */
+.ub-cursor-blend { mix-blend-mode: screen; }
+html.light .ub-cursor-blend { mix-blend-mode: normal; }
+
 /* Hide system cursor on desktop while custom cursor is mounted */
 @media (pointer: fine) {
   html.ub-cursor-on,
