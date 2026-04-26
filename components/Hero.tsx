@@ -5,6 +5,7 @@ import Marquee from "./Marquee";
 import MagneticLink from "./MagneticLink";
 import Terminal from "./Terminal";
 import RotatingText from "./RotatingText";
+import HeroTitle from "./HeroTitle";
 
 export default function Hero({
   locale,
@@ -38,10 +39,7 @@ export default function Hero({
               {t.hero.tag}
             </div>
 
-            <h1 className="reveal reveal-2 font-display text-6xl italic leading-[1.02] tracking-[-0.02em] text-white md:text-8xl lg:text-[7.5rem]" style={{ fontWeight: 400, fontVariationSettings: "'opsz' 144, 'SOFT' 50" }}>
-              {t.hero.title}
-              <span className="not-italic text-accent">.</span>
-            </h1>
+            <HeroTitle text={t.hero.title} />
 
             <p className="reveal reveal-3 mt-4 font-mono text-sm uppercase tracking-[0.2em] text-accent">
               {t.hero.role}
@@ -62,6 +60,7 @@ export default function Hero({
             <div className="reveal reveal-4 mt-10 flex flex-wrap gap-3">
               <MagneticLink
                 href="#projects"
+                data-cursor-label={locale === "tr" ? "Bak" : "View"}
                 className="group inline-flex items-center gap-2 rounded-md bg-accent px-5 py-2.5 text-sm font-medium text-bg hover:bg-accent/90"
               >
                 {t.hero.cta}
@@ -71,6 +70,7 @@ export default function Hero({
               </MagneticLink>
               <MagneticLink
                 href="#contact"
+                data-cursor-label={locale === "tr" ? "Yaz" : "Write"}
                 className="inline-flex items-center gap-2 rounded-md border border-border bg-panel/60 px-5 py-2.5 text-sm font-medium text-white backdrop-blur hover:border-accent hover:text-accent"
               >
                 {t.hero.ctaSecondary}

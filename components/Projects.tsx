@@ -62,6 +62,7 @@ function FeaturedCard({
         href={`/${locale}/projects/${p.slug}`}
         className="absolute inset-0 z-10"
         aria-label={`${p.name} — ${t.projects.viewProject}`}
+        data-cursor-label={t.projects.viewProject}
       />
       <div
         className="pointer-events-none absolute -right-16 -top-16 h-72 w-72 rounded-full bg-accent/10 blur-3xl transition-opacity group-hover:opacity-100"
@@ -119,6 +120,7 @@ function Card({
         href={`/${locale}/projects/${p.slug}`}
         className="absolute inset-0 z-10"
         aria-label={`${p.name} — ${t.projects.viewProject}`}
+        data-cursor-label={t.projects.viewProject}
       />
       <div className="flex items-center justify-between">
         <h3 className="text-base font-medium text-white">{p.name}</h3>

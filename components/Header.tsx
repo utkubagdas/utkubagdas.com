@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Dictionary, Locale } from "@/lib/i18n/dictionaries";
 import MobileMenu from "./MobileMenu";
 import CommandPalette from "./CommandPalette";
+import MagneticLink from "./MagneticLink";
 
 export default function Header({
   locale,
@@ -36,14 +37,15 @@ export default function Header({
 
         <nav className="hidden items-center gap-7 md:flex">
           {navItems.map((item) => (
-            <a
+            <MagneticLink
               key={item.href}
               href={item.href}
+              strength={0.25}
               data-nav-link
-              className="text-sm text-muted transition hover:text-white"
+              className="text-sm text-muted hover:text-white"
             >
               {item.label}
-            </a>
+            </MagneticLink>
           ))}
         </nav>
 
