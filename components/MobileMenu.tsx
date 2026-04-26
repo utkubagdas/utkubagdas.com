@@ -74,12 +74,22 @@ export default function MobileMenu({
           }`}
         />
         <div
-          style={{ backgroundColor: "#0a0b0e", boxShadow: "-24px 0 60px rgba(0,0,0,0.6)" }}
-          className={`absolute inset-y-0 right-0 flex w-full max-w-sm flex-col border-l border-border transition-transform duration-300 ${
-            open ? "translate-x-0" : "translate-x-full"
-          }`}
+          style={{
+            boxShadow: "-24px 0 60px rgba(0,0,0,0.6)",
+            isolation: "isolate",
+            transform: open ? "translate3d(0,0,0)" : "translate3d(100%,0,0)",
+          }}
+          className="absolute inset-y-0 right-0 flex w-full max-w-sm flex-col border-l border-border transition-transform duration-300"
         >
-          <div className="flex items-center justify-between border-b border-border px-6 py-4">
+          <div
+            aria-hidden
+            style={{ backgroundColor: "#0a0b0e" }}
+            className="absolute inset-0 -z-10"
+          />
+          <div
+            style={{ backgroundColor: "#0a0b0e" }}
+            className="flex items-center justify-between border-b border-border px-6 py-4"
+          >
             <span className="font-mono text-sm tracking-tight text-white">
               ub<span className="text-accent">.</span>
             </span>
@@ -104,7 +114,10 @@ export default function MobileMenu({
             </button>
           </div>
 
-          <nav className="flex flex-1 flex-col px-6 py-8">
+          <nav
+            style={{ backgroundColor: "#0a0b0e" }}
+            className="flex flex-1 flex-col px-6 py-8"
+          >
             {items.map((item, i) => (
               <a
                 key={item.href}
@@ -122,7 +135,10 @@ export default function MobileMenu({
             ))}
           </nav>
 
-          <div className="flex items-center justify-between gap-3 border-t border-border px-6 py-5">
+          <div
+            style={{ backgroundColor: "#0a0b0e" }}
+            className="flex items-center justify-between gap-3 border-t border-border px-6 py-5"
+          >
             <Link
               href={`/${otherLocale}`}
               onClick={() => setOpen(false)}
