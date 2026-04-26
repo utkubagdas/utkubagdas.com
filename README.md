@@ -134,6 +134,6 @@ No `.env` required — analytics and the GitHub widget run unauthenticated.
 <div align="center">
 
 If you found something here interesting or want to talk about a project,<br/>
-**[utku.bagdas@gmail.com](mailto:utku.bagdas@gmail.com)**
+**[info@utkubagdas.com](mailto:info@utkubagdas.com)**
 
 </div>

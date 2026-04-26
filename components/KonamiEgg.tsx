@@ -99,7 +99,7 @@ export default function KonamiEgg() {
       <h2 className="font-display italic text-5xl text-white" style={{ fontVariationSettings: "'opsz' 144, 'SOFT' 50" }}>
         keep building.
       </h2>
-      <p className="text-sm text-muted">utku.bagdas@gmail.com</p>
+      <p className="text-sm text-muted">info@utkubagdas.com</p>
       <button
         type="button"
         onClick={() => setActive(false)}

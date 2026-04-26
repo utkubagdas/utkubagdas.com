@@ -11,4 +11,4 @@ export const socials: SocialLink[] = [
   { label: "Instagram", href: "https://www.instagram.com/" },
 ];
 
-export const contactEmail = "utku.bagdas@gmail.com";
+export const contactEmail = "info@utkubagdas.com";

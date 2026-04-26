@@ -17,7 +17,7 @@ export default function ConsoleEgg() {
    │     building something interesting?         │
    │     i'd love to hear about it.              │
    │                                             │
-   │     →  utku.bagdas@gmail.com                │
+   │     →  info@utkubagdas.com                  │
    │                                             │
    ╰─────────────────────────────────────────────╯
 `;
