@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
 
 const GH_USERNAME = "utkubagdas";
@@ -125,29 +128,6 @@ function eventToActivity(ev: GhEvent): Activity | null {
   }
 }
 
-async function getRecentActivity(): Promise<Activity[] | null> {
-  try {
-    const res = await fetch(
-      `https://api.github.com/users/${GH_USERNAME}/events/public`,
-      {
-        next: { revalidate: 300 },
-        headers: { Accept: "application/vnd.github+json" },
-      }
-    );
-    if (!res.ok) return null;
-    const events = (await res.json()) as GhEvent[];
-    const list: Activity[] = [];
-    for (const ev of events) {
-      const a = eventToActivity(ev);
-      if (a) list.push(a);
-      if (list.length >= 6) break;
-    }
-    return list;
-  } catch {
-    return null;
-  }
-}
-
 function relative(date: string, locale: "tr" | "en"): string {
   const ms = Date.now() - new Date(date).getTime();
   const m = Math.round(ms / 60000);
@@ -184,14 +164,46 @@ const KIND_COLORS: Record<ActivityKind, string> = {
   fork: "border-white/20 bg-white/5 text-white/70",
 };
 
-export default async function GitHubActivity({
+type State =
+  | { status: "loading" }
+  | { status: "ok"; items: Activity[] }
+  | { status: "empty" }
+  | { status: "error" };
+
+export default function GitHubActivity({
   t,
   locale,
 }: {
   t: Dictionary;
   locale: "tr" | "en";
 }) {
-  const activity = await getRecentActivity();
+  const [state, setState] = useState<State>({ status: "loading" });
+
+  useEffect(() => {
+    let canceled = false;
+    const url = `https://api.github.com/users/${GH_USERNAME}/events/public?_=${Date.now()}`;
+    fetch(url, {
+      cache: "no-store",
+      headers: { Accept: "application/vnd.github+json" },
+    })
+      .then((r) => (r.ok ? r.json() : Promise.reject()))
+      .then((events: GhEvent[]) => {
+        if (canceled) return;
+        const items: Activity[] = [];
+        for (const ev of events) {
+          const a = eventToActivity(ev);
+          if (a) items.push(a);
+          if (items.length >= 6) break;
+        }
+        setState(items.length > 0 ? { status: "ok", items } : { status: "empty" });
+      })
+      .catch(() => {
+        if (!canceled) setState({ status: "error" });
+      });
+    return () => {
+      canceled = true;
+    };
+  }, []);
 
   return (
     <section className="border-b border-border py-24 md:py-32">
@@ -214,9 +226,7 @@ export default async function GitHubActivity({
             >
               {t.activity.title}
             </h2>
-            <p className="mt-3 max-w-xl text-sm text-muted">
-              {t.activity.subtitle}
-            </p>
+            <p className="mt-3 max-w-xl text-sm text-muted">{t.activity.subtitle}</p>
           </div>
           <a
             href={`https://github.com/${GH_USERNAME}`}
@@ -230,10 +240,30 @@ export default async function GitHubActivity({
         </div>
 
         <div data-reveal className="mt-10 overflow-hidden rounded-xl border border-border bg-panel/40">
-          {activity && activity.length > 0 ? (
+          {state.status === "loading" && (
             <ul className="divide-y divide-border">
-              {activity.map((a, i) => (
-                <li key={`${a.url}-${i}`} className="transition-colors hover:bg-panel">
+              {[0, 1, 2].map((i) => (
+                <li
+                  key={i}
+                  className="flex items-center gap-4 px-5 py-4"
+                  aria-hidden
+                >
+                  <span className="h-5 w-14 animate-pulse rounded-md bg-white/5" />
+                  <span className="h-3 w-44 animate-pulse rounded bg-white/5" />
+                  <span className="h-3 flex-1 animate-pulse rounded bg-white/5" />
+                  <span className="h-3 w-16 animate-pulse rounded bg-white/5" />
+                </li>
+              ))}
+            </ul>
+          )}
+
+          {state.status === "ok" && (
+            <ul className="divide-y divide-border">
+              {state.items.map((a, i) => (
+                <li
+                  key={`${a.url}-${i}`}
+                  className="transition-colors hover:bg-panel"
+                >
                   <a
                     href={a.url}
                     target="_blank"
@@ -258,9 +288,17 @@ export default async function GitHubActivity({
                 </li>
               ))}
             </ul>
-          ) : (
+          )}
+
+          {state.status === "empty" && (
             <p className="px-5 py-8 text-center text-sm text-muted">
-              {activity === null ? t.activity.offline : t.activity.empty}
+              {t.activity.empty}
+            </p>
+          )}
+
+          {state.status === "error" && (
+            <p className="px-5 py-8 text-center text-sm text-muted">
+              {t.activity.offline}
             </p>
           )}
         </div>
