@@ -58,6 +58,32 @@ export default async function BlogPost({
       <a href="#main" className="skip-link">
         {l === "tr" ? "İçeriğe atla" : "Skip to content"}
       </a>
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            headline: post.title[l],
+            description: post.excerpt[l],
+            datePublished: post.date,
+            author: {
+              "@type": "Person",
+              name: "Utku Bağdaş",
+              url: "https://utkubagdas.com",
+            },
+            publisher: {
+              "@type": "Person",
+              name: "Utku Bağdaş",
+            },
+            mainEntityOfPage: `https://utkubagdas.com/${l}/blog/${post.slug}`,
+            keywords: post.tags.join(", "),
+            inLanguage: l === "tr" ? "tr-TR" : "en-US",
+            image: `https://utkubagdas.com/${l}/blog/${post.slug}/opengraph-image`,
+          }),
+        }}
+      />
       <ScrollReveal />
       <Header locale={l} t={t} />
       <main id="main" className="mx-auto max-w-2xl px-6 py-24 md:py-32">

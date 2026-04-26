@@ -237,6 +237,57 @@ section[id] {
   to { transform: translateY(110vh); }
 }
 
+/* Print styles (whole site) */
+@media print {
+  html, body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  body {
+    background-image: none !important;
+  }
+  .grain-overlay,
+  .scroll-progress,
+  .back-to-top,
+  .konami-overlay,
+  header,
+  footer,
+  [data-no-print],
+  .marquee-fade,
+  .mesh-gradient,
+  .grid-bg,
+  .spotlight,
+  nav[aria-label="Section navigation"],
+  .skip-link {
+    display: none !important;
+  }
+  main {
+    color: #000000 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: none !important;
+  }
+  a {
+    color: #000000 !important;
+    text-decoration: underline !important;
+  }
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.85em;
+    color: #555;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    color: #000 !important;
+    page-break-after: avoid;
+  }
+  .glow-border::before { display: none !important; }
+  section { page-break-inside: avoid; }
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
 /* Subtle film grain overlay (entire viewport) */
 .grain-overlay {
   position: fixed;

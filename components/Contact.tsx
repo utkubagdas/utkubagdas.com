@@ -37,6 +37,22 @@ export default function Contact({ t }: { t: Dictionary }) {
             <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted">
               {t.contact.socialLabel}
             </p>
+            <div className="-mt-1 mb-4 flex flex-wrap gap-2">
+              <a
+                href="/contact.vcf"
+                download
+                className="inline-flex items-center gap-1.5 rounded-md border border-border bg-bg/40 px-2.5 py-1 font-mono text-[11px] text-muted transition hover:border-accent hover:text-accent"
+              >
+                ↓ {t.contact.vcardLabel}
+              </a>
+              <a
+                href="/book-call.ics"
+                download
+                className="inline-flex items-center gap-1.5 rounded-md border border-border bg-bg/40 px-2.5 py-1 font-mono text-[11px] text-muted transition hover:border-accent hover:text-accent"
+              >
+                ↓ {t.contact.icsLabel}
+              </a>
+            </div>
             <ul className="mt-3 grid grid-cols-2 gap-2">
               {socials.map((s) => (
                 <li key={s.label}>

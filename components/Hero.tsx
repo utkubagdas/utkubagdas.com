@@ -4,6 +4,7 @@ import Spotlight from "./Spotlight";
 import Marquee from "./Marquee";
 import MagneticLink from "./MagneticLink";
 import CodeEditor from "./CodeEditor";
+import RotatingText from "./RotatingText";
 
 export default function Hero({
   locale: _locale,
@@ -49,6 +50,13 @@ export default function Hero({
             <p className="reveal reveal-4 mt-6 max-w-2xl text-lg leading-relaxed text-white/80 md:text-xl">
               {t.hero.lede}{" "}
               <span className="text-muted">{t.hero.sub}</span>
+            </p>
+
+            <p className="reveal reveal-4 mt-4 flex flex-wrap items-baseline gap-2 font-mono text-sm text-muted">
+              <span>{t.hero.rotatingPrefix}</span>
+              <span className="text-accent">
+                <RotatingText items={t.hero.rotatingItems} />
+              </span>
             </p>
 
             <div className="reveal reveal-4 mt-10 flex flex-wrap gap-3">

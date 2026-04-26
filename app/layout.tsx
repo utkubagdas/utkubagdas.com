@@ -44,6 +44,11 @@ export const metadata: Metadata = {
   },
   robots: { index: true, follow: true },
   manifest: "/manifest.webmanifest",
+  alternates: {
+    types: {
+      "application/rss+xml": "/feed.xml",
+    },
+  },
   appleWebApp: {
     capable: true,
     title: "Utku Bağdaş",

@@ -19,5 +19,27 @@ export default function manifest(): MetadataRoute.Manifest {
         purpose: "any",
       },
     ],
+    shortcuts: [
+      {
+        name: "Projects",
+        short_name: "Projects",
+        url: "/tr#projects",
+      },
+      {
+        name: "Contact",
+        short_name: "Contact",
+        url: "/tr#contact",
+      },
+      {
+        name: "CV",
+        short_name: "CV",
+        url: "/tr/cv",
+      },
+      {
+        name: "Blog",
+        short_name: "Blog",
+        url: "/tr/blog",
+      },
+    ],
   };
 }
