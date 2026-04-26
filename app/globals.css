@@ -193,6 +193,25 @@ section[id] {
   margin-top: 4px;
 }
 
+/* Hide system cursor on desktop while custom cursor is mounted */
+@media (pointer: fine) {
+  html.ub-cursor-on,
+  html.ub-cursor-on body,
+  html.ub-cursor-on a,
+  html.ub-cursor-on button,
+  html.ub-cursor-on [role="button"],
+  html.ub-cursor-on label,
+  html.ub-cursor-on summary,
+  html.ub-cursor-on [data-cursor="hover"] {
+    cursor: none;
+  }
+  html.ub-cursor-on input,
+  html.ub-cursor-on textarea,
+  html.ub-cursor-on [contenteditable="true"] {
+    cursor: text;
+  }
+}
+
 /* Spring-easing token used by hover transforms */
 :root {
   --spring: cubic-bezier(0.34, 1.56, 0.64, 1);

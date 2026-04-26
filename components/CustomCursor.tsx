@@ -19,6 +19,7 @@ export default function CustomCursor() {
     if (typeof window === "undefined") return;
     if (window.matchMedia("(pointer: coarse)").matches) return;
     setEnabled(true);
+    document.documentElement.classList.add("ub-cursor-on");
 
     const onMove = (e: MouseEvent) => {
       targetPos.current.x = e.clientX;
@@ -81,6 +82,7 @@ export default function CustomCursor() {
       window.removeEventListener("mousemove", onMove);
       window.removeEventListener("mouseover", onOver);
       if (rafId.current != null) cancelAnimationFrame(rafId.current);
+      document.documentElement.classList.remove("ub-cursor-on");
     };
   }, []);
 
