@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Dictionary, Locale } from "@/lib/i18n/dictionaries";
 import { projects, type Project } from "@/lib/projects";
 import SectionHeading from "./SectionHeading";
@@ -57,6 +58,11 @@ function FeaturedCard({
       intensity={3}
       className="glow-border group relative col-span-1 flex flex-col justify-between overflow-hidden rounded-xl border border-border bg-panel/40 p-6 transition-colors hover:bg-panel md:col-span-3 md:p-10"
     >
+      <Link
+        href={`/${locale}/projects/${p.slug}`}
+        className="absolute inset-0 z-10"
+        aria-label={`${p.name} — ${t.projects.viewProject}`}
+      />
       <div
         className="pointer-events-none absolute -right-16 -top-16 h-72 w-72 rounded-full bg-accent/10 blur-3xl transition-opacity group-hover:opacity-100"
         aria-hidden
@@ -109,6 +115,11 @@ function Card({
 }) {
   return (
     <TiltCard className="glow-border group relative flex flex-col rounded-xl border border-border bg-panel/40 p-6 transition-colors hover:bg-panel">
+      <Link
+        href={`/${locale}/projects/${p.slug}`}
+        className="absolute inset-0 z-10"
+        aria-label={`${p.name} — ${t.projects.viewProject}`}
+      />
       <div className="flex items-center justify-between">
         <h3 className="text-base font-medium text-white">{p.name}</h3>
         {p.status === "placeholder" && (

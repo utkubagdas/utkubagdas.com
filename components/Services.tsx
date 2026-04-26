@@ -1,11 +1,13 @@
-import type { Dictionary } from "@/lib/i18n/dictionaries";
+import Link from "next/link";
+import type { Dictionary, Locale } from "@/lib/i18n/dictionaries";
+import { serviceSlugs } from "@/lib/services";
 import SectionHeading from "./SectionHeading";
 import ServiceIcon from "./ServiceIcon";
 import TiltCard from "./TiltCard";
 
 const icons = ["web", "site", "ai", "support"] as const;
 
-export default function Services({ t }: { t: Dictionary }) {
+export default function Services({ t, locale }: { t: Dictionary; locale: Locale }) {
   return (
     <section id="services" className="border-b border-border py-24 md:py-32">
       <div className="mx-auto max-w-6xl px-6">
@@ -23,6 +25,11 @@ export default function Services({ t }: { t: Dictionary }) {
               data-reveal-delay={((i % 4) + 1) as 1 | 2 | 3 | 4}
               className="glow-border group relative flex flex-col rounded-xl border border-border bg-panel/40 p-6 transition-colors hover:bg-panel"
             >
+              <Link
+                href={`/${locale}/services/${serviceSlugs[i]}`}
+                className="absolute inset-0 z-10"
+                aria-label={item.title}
+              />
               <div className="flex items-center justify-between">
                 <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-bg/80 text-accent transition group-hover:border-accent/50">
                   <ServiceIcon name={icons[i]} />

@@ -22,6 +22,8 @@ export default function Footer({
     { href: `/${locale}/uses`, label: "/uses" },
     { href: `/${locale}/now`, label: "/now" },
     { href: `/${locale}/cv`, label: "/cv" },
+    { href: `/${locale}/blog`, label: "/blog" },
+    { href: `/${locale}/press`, label: "/press" },
   ];
 
   return (

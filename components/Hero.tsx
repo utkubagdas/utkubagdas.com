@@ -14,6 +14,7 @@ export default function Hero({
 }) {
   return (
     <section className="relative overflow-hidden border-b border-border">
+      <div className="mesh-gradient" aria-hidden />
       <div className="absolute inset-0 grid-bg" aria-hidden />
       <Spotlight />
       <div

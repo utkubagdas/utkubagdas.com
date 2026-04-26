@@ -7,6 +7,11 @@ export type Project = {
   year: string;
   status: "live" | "wip" | "placeholder";
   featured?: boolean;
+  client?: { tr: string; en: string };
+  role?: { tr: string; en: string };
+  problem?: { tr: string; en: string };
+  solution?: { tr: string; en: string };
+  outcome?: { tr: string; en: string };
 };
 
 export const projects: Project[] = [

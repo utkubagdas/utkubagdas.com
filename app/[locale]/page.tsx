@@ -48,13 +48,16 @@ export default async function LocaleHome({
       <CustomCursor />
       <ScrollReveal />
       <ScrollUI sections={sections} />
+      <a href="#main" className="skip-link">
+        {l === "tr" ? "İçeriğe atla" : "Skip to content"}
+      </a>
       <Header locale={l} t={t} />
-      <main>
+      <main id="main">
         <Hero locale={l} t={t} />
         <Stats t={t} />
         <About locale={l} t={t} />
         <Currently t={t} />
-        <Services t={t} />
+        <Services t={t} locale={l} />
         <Process t={t} />
         <PullQuote t={t} />
         <Projects locale={l} t={t} />
