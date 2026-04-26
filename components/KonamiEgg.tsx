@@ -30,6 +30,11 @@ export default function KonamiEgg() {
         if (next === SEQ.length) {
           setActive(true);
           setProgress(0);
+          if (typeof window !== "undefined") {
+            window.dispatchEvent(
+              new CustomEvent("ub:achievement", { detail: "konami" })
+            );
+          }
         } else {
           setProgress(next);
         }
@@ -49,6 +54,19 @@ export default function KonamiEgg() {
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [active]);
+
+  useEffect(() => {
+    const onTrigger = () => {
+      setActive(true);
+      if (typeof window !== "undefined") {
+        window.dispatchEvent(
+          new CustomEvent("ub:achievement", { detail: "konami" })
+        );
+      }
+    };
+    window.addEventListener("ub:matrix", onTrigger);
+    return () => window.removeEventListener("ub:matrix", onTrigger);
+  }, []);
 
   if (!active) return null;
 

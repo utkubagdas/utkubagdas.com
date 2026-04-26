@@ -21,6 +21,8 @@ import ScrollUI from "@/components/ScrollUI";
 import CustomCursor from "@/components/CustomCursor";
 import StructuredData from "@/components/StructuredData";
 import SplashScreen from "@/components/SplashScreen";
+import CursorTrail from "@/components/CursorTrail";
+import Achievements from "@/components/Achievements";
 
 export default async function LocaleHome({
   params,
@@ -46,6 +48,8 @@ export default async function LocaleHome({
       <SplashScreen />
       <StructuredData locale={l} t={t} />
       <CustomCursor />
+      <CursorTrail />
+      <Achievements locale={l} />
       <ScrollReveal />
       <ScrollUI sections={sections} />
       <a href="#main" className="skip-link">

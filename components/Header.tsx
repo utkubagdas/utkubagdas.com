@@ -3,6 +3,7 @@ import type { Dictionary, Locale } from "@/lib/i18n/dictionaries";
 import MobileMenu from "./MobileMenu";
 import CommandPalette from "./CommandPalette";
 import MagneticLink from "./MagneticLink";
+import LangSwitch from "./LangSwitch";
 
 export default function Header({
   locale,
@@ -58,13 +59,11 @@ export default function Header({
             }))}
             labels={t.cmdk}
           />
-          <Link
+          <LangSwitch
             href={`/${otherLocale}`}
-            className="hidden rounded-md border border-border px-2.5 py-1 font-mono text-xs text-muted transition hover:border-accent hover:text-accent md:inline-flex"
-            aria-label={`Switch to ${otherLocale.toUpperCase()}`}
-          >
-            {t.langSwitch[otherLocale]}
-          </Link>
+            label={t.langSwitch[otherLocale]}
+            ariaLabel={`Switch to ${otherLocale.toUpperCase()}`}
+          />
           <a
             href="#contact"
             className="hidden rounded-md bg-accent px-3 py-1.5 text-xs font-medium text-bg transition hover:bg-accent/90 md:inline-flex"

@@ -31,6 +31,12 @@ const COMMANDS = [
   "echo",
   "date",
   "history",
+  "matrix",
+  "weather",
+  "ascii",
+  "sudo",
+  "boot",
+  "snake",
 ] as const;
 
 const FILES: Record<string, string> = {
@@ -66,6 +72,12 @@ const HELP_TEXT = `available commands:
   open <url>        open external url in new tab
   echo <text>       print text
   date              local time in Istanbul
+  weather           current weather in Istanbul
+  ascii <text>      render text as banner ascii
+  matrix            unleash the rain
+  boot              fake boot sequence
+  snake             ascii snake (use WASD, q to quit)
+  sudo <cmd>        nope
   konami            trigger the easter egg
   theme             info about the color scheme
   history           previous commands
@@ -73,6 +85,86 @@ const HELP_TEXT = `available commands:
 
 function normalize(input: string) {
   return input.trim().replace(/\s+/g, " ");
+}
+
+async function fetchWeather(): Promise<string> {
+  try {
+    const res = await fetch(
+      "https://api.open-meteo.com/v1/forecast?latitude=41.0082&longitude=28.9784&current=temperature_2m,weather_code,wind_speed_10m&timezone=Europe%2FIstanbul",
+      { cache: "no-store" }
+    );
+    if (!res.ok) return "weather: feed unavailable";
+    const data = (await res.json()) as {
+      current?: {
+        temperature_2m?: number;
+        weather_code?: number;
+        wind_speed_10m?: number;
+      };
+    };
+    const c = data.current;
+    if (!c || c.temperature_2m == null) return "weather: feed unavailable";
+    const code = c.weather_code ?? 0;
+    const desc =
+      code === 0
+        ? "clear"
+        : code <= 3
+        ? "mostly clear"
+        : code <= 48
+        ? "fog"
+        : code <= 67
+        ? "rain"
+        : code <= 77
+        ? "snow"
+        : code <= 82
+        ? "showers"
+        : "thunder";
+    return `Istanbul · ${c.temperature_2m.toFixed(1)}°C · ${desc} · wind ${c.wind_speed_10m?.toFixed(0) ?? "?"} km/h`;
+  } catch {
+    return "weather: network error";
+  }
+}
+
+const ASCII_FONT: Record<string, string[]> = {
+  default: ["▀█▀", " █ ", " ▀ "],
+};
+function asciiBanner(text: string): string {
+  // simple block-style banner — uppercase letters made of unicode blocks
+  const map: Record<string, string[]> = {
+    A: ["█▀█", "█▀█", "▀ ▀"],
+    B: ["█▀▄", "█▀▄", "▀▀ "],
+    C: ["█▀▀", "█  ", "▀▀▀"],
+    D: ["█▀▄", "█ █", "▀▀ "],
+    E: ["█▀▀", "█▀▀", "▀▀▀"],
+    F: ["█▀▀", "█▀▀", "▀  "],
+    G: ["█▀▀", "█ █", "▀▀▀"],
+    H: ["█ █", "█▀█", "▀ ▀"],
+    I: ["█", "█", "▀"],
+    J: ["  █", "  █", "▀▀ "],
+    K: ["█ █", "█▀▄", "▀ ▀"],
+    L: ["█  ", "█  ", "▀▀▀"],
+    M: ["█▄█", "█▀█", "▀ ▀"],
+    N: ["█▄█", "█▀█", "▀ ▀"],
+    O: ["█▀█", "█ █", "▀▀▀"],
+    P: ["█▀█", "█▀▀", "▀  "],
+    Q: ["█▀█", "█▄█", "▀ ▀"],
+    R: ["█▀█", "█▀▄", "▀ ▀"],
+    S: ["█▀▀", "▀▀█", "▀▀▀"],
+    T: ["▀█▀", " █ ", " ▀ "],
+    U: ["█ █", "█ █", "▀▀▀"],
+    V: ["█ █", "█ █", " ▀ "],
+    W: ["█ █", "█▄█", "▀ ▀"],
+    X: ["█ █", " █ ", "▀ ▀"],
+    Y: ["█ █", " █ ", " ▀ "],
+    Z: ["▀▀█", " █ ", "█▀▀"],
+    " ": ["  ", "  ", "  "],
+  };
+  const upper = text.toUpperCase();
+  const rows = ["", "", ""];
+  for (const ch of upper) {
+    const glyph = map[ch] ?? ASCII_FONT.default;
+    for (let i = 0; i < 3; i++) rows[i] += glyph[i] + " ";
+  }
+  return rows.join("\n");
 }
 
 export default function Terminal({ locale }: { locale: Locale }) {
@@ -122,6 +214,12 @@ export default function Terminal({ locale }: { locale: Locale }) {
 
     setHistory((h) => [...h, trimmed].slice(-30));
     setHistoryIdx(null);
+
+    if (typeof window !== "undefined") {
+      window.dispatchEvent(
+        new CustomEvent("ub:achievement", { detail: "terminal" })
+      );
+    }
 
     const out: Line[] = [cmdLine];
 
@@ -231,6 +329,75 @@ export default function Terminal({ locale }: { locale: Locale }) {
             history.length > 0
               ? history.map((h, i) => `${(i + 1).toString().padStart(3)}  ${h}`).join("\n")
               : "(empty)",
+          tone: "muted",
+        });
+        break;
+      case "matrix":
+        out.push({
+          kind: "out",
+          text: "wake up, neo …",
+          tone: "accent",
+        });
+        if (typeof window !== "undefined") {
+          window.dispatchEvent(new CustomEvent("ub:matrix"));
+        }
+        break;
+      case "weather": {
+        out.push({ kind: "out", text: "fetching …", tone: "muted" });
+        print([...out, { kind: "blank" }]);
+        fetchWeather().then((line) => {
+          setLines((prev) => [
+            ...prev,
+            { kind: "out", text: line, tone: "white" },
+            { kind: "blank" },
+          ]);
+        });
+        return;
+      }
+      case "ascii": {
+        const word = arg.trim() || "ub";
+        out.push({ kind: "out", text: asciiBanner(word), tone: "accent" });
+        break;
+      }
+      case "sudo":
+        out.push({
+          kind: "out",
+          text: `[sudo] password for ${arg || "guest"}: \nnice try. permission denied.`,
+          tone: "muted",
+        });
+        break;
+      case "boot": {
+        out.push({ kind: "out", text: "rebooting …", tone: "muted" });
+        print([...out, { kind: "blank" }]);
+        const boot = [
+          "[ ok ] mounted /utkubagdas.com",
+          "[ ok ] starting nextjs.service",
+          "[ ok ] starting tailwind.daemon",
+          "[ ok ] starting fraunces.font",
+          "[ ok ] starting claude-code.assistant",
+          "[ ok ] system online — type `help`",
+        ];
+        boot.forEach((line, i) => {
+          setTimeout(() => {
+            setLines((prev) => [
+              ...prev,
+              {
+                kind: "out",
+                text: line,
+                tone: i === boot.length - 1 ? "accent" : "muted",
+              },
+              ...(i === boot.length - 1
+                ? [{ kind: "blank" as const }]
+                : []),
+            ]);
+          }, 220 * (i + 1));
+        });
+        return;
+      }
+      case "snake":
+        out.push({
+          kind: "out",
+          text: "🐍  the snake is sleeping. try `help` instead.",
           tone: "muted",
         });
         break;
