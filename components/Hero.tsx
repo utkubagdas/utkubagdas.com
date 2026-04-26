@@ -18,15 +18,13 @@ export default function Hero({
   t: Dictionary;
 }) {
   return (
-    <section className="relative overflow-hidden border-b border-border">
-      <HeroParallax className="absolute inset-0">
-        <div className="depth-1 absolute inset-0">
-          <WebGLBackdrop />
-        </div>
-        <div className="depth-2 absolute inset-0 mesh-gradient" aria-hidden />
-        <div className="depth-2 absolute inset-0 grid-bg" aria-hidden />
-        <Spotlight />
-      </HeroParallax>
+    <HeroParallax className="hero-parallax relative overflow-hidden border-b border-border">
+      <div className="depth-1 absolute inset-0">
+        <WebGLBackdrop />
+      </div>
+      <div className="depth-2 absolute inset-0 mesh-gradient" aria-hidden />
+      <div className="depth-2 absolute inset-0 grid-bg" aria-hidden />
+      <Spotlight />
       <div
         className="absolute -top-32 left-1/2 h-72 w-[60rem] -translate-x-1/2 rounded-full bg-accent/10 blur-3xl"
         aria-hidden
@@ -114,7 +112,7 @@ export default function Hero({
       </div>
 
       <Marquee />
-    </section>
+    </HeroParallax>
   );
 }
 

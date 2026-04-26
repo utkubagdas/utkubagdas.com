@@ -47,12 +47,24 @@ body {
   background-color: rgb(var(--c-accent) / 0.3);
 }
 
-/* Map text-white / text-black to theme-aware foreground for legacy classes */
-.text-white { color: rgb(var(--c-foreground-strong)) !important; }
-.text-black { color: rgb(var(--c-foreground-strong)) !important; }
-.bg-white { background-color: rgb(var(--c-foreground-strong)) !important; }
+/* Theme-aware text-bg for accent buttons */
 .text-bg { color: rgb(var(--c-bg)) !important; }
 .bg-bg { background-color: rgb(var(--c-bg)); }
+
+/* In LIGHT mode, force every text-white / bg-white variant
+   (including text-white/85 etc) to the dark foreground colour */
+html.light [class*="text-white"] {
+  color: rgb(var(--c-foreground-strong)) !important;
+}
+html.light [class*="bg-white"] {
+  background-color: rgb(var(--c-foreground-strong) / 0.08) !important;
+}
+html.light .text-white\/85,
+html.light .text-white\/90,
+html.light .text-white\/80,
+html.light .text-white\/70 {
+  color: rgb(var(--c-foreground-strong) / 0.92) !important;
+}
 
 /* Subtle dotted grid background */
 .grid-bg {

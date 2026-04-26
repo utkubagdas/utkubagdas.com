@@ -24,8 +24,11 @@ export default function HeroParallax({
 
     const onMove = (e: MouseEvent) => {
       const rect = el.getBoundingClientRect();
-      target.current.x = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
-      target.current.y = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
+      // Skip when cursor is far above/below the hero — caps to [-1, 1]
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+      target.current.x = Math.max(-1, Math.min(1, x * 2));
+      target.current.y = Math.max(-1, Math.min(1, y * 2));
     };
 
     const tick = () => {
@@ -36,10 +39,10 @@ export default function HeroParallax({
       raf.current = requestAnimationFrame(tick);
     };
 
-    el.addEventListener("mousemove", onMove);
+    window.addEventListener("mousemove", onMove);
     raf.current = requestAnimationFrame(tick);
     return () => {
-      el.removeEventListener("mousemove", onMove);
+      window.removeEventListener("mousemove", onMove);
       if (raf.current != null) cancelAnimationFrame(raf.current);
     };
   }, []);
@@ -48,7 +51,12 @@ export default function HeroParallax({
     <div
       ref={ref}
       className={`hero-parallax ${className}`}
-      style={{ ["--mx" as string]: 0, ["--my" as string]: 0 }}
+      style={
+        {
+          "--mx": "0",
+          "--my": "0",
+        } as React.CSSProperties
+      }
     >
       {children}
     </div>

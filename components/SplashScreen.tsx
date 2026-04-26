@@ -11,11 +11,6 @@ export default function SplashScreen() {
       setStage("gone");
       return;
     }
-    if (sessionStorage.getItem("splash-shown")) {
-      setStage("gone");
-      return;
-    }
-    sessionStorage.setItem("splash-shown", "1");
 
     const t1 = setTimeout(() => setStage("out"), 1500);
     const t2 = setTimeout(() => setStage("gone"), 2100);
@@ -39,50 +34,51 @@ export default function SplashScreen() {
         aria-hidden
       />
       <svg
-        viewBox="0 0 80 36"
+        viewBox="0 0 60 30"
         width="240"
-        height="108"
+        height="120"
         fill="none"
         stroke="currentColor"
-        strokeWidth="3"
+        strokeWidth="2.5"
         strokeLinecap="round"
         strokeLinejoin="round"
-        className="relative text-white"
+        className="relative text-foreground-strong"
+        style={{ color: "rgb(var(--c-foreground-strong))" }}
         aria-label="utkubagdas"
       >
-        {/* u */}
+        {/* u — left curl down then up */}
         <path
-          d="M 5 6 V 20 A 8 8 0 0 0 21 20 V 6"
+          d="M 5 8 V 18 A 6 6 0 0 0 17 18 V 8"
           className="splash-stroke"
           style={{ animationDelay: "100ms" }}
         />
-        {/* b stem */}
+        {/* b stem — vertical line */}
         <path
-          d="M 32 3 V 28"
+          d="M 28 3 V 24"
           className="splash-stroke"
           style={{ animationDelay: "350ms" }}
         />
-        {/* b bowl */}
+        {/* b bowl — half circle attached to stem */}
         <path
-          d="M 32 12 A 8 8 0 1 1 32 28 A 8 8 0 1 1 32 12 Z"
+          d="M 28 24 A 6 6 0 0 0 28 12"
           className="splash-stroke"
           style={{ animationDelay: "550ms" }}
         />
         {/* accent dot */}
         <circle
-          cx="55"
-          cy="26"
-          r="2.5"
+          cx="42"
+          cy="22"
+          r="2"
           fill="currentColor"
           stroke="none"
-          className="splash-dot text-accent"
-          style={{ animationDelay: "1050ms" }}
+          className="splash-dot"
+          style={{ animationDelay: "1050ms", color: "rgb(var(--c-accent))" }}
         />
       </svg>
       <style>{`
         .splash-stroke {
-          stroke-dasharray: 200;
-          stroke-dashoffset: 200;
+          stroke-dasharray: 100;
+          stroke-dashoffset: 100;
           animation: splash-draw 0.85s cubic-bezier(0.65, 0, 0.35, 1) forwards;
         }
         .splash-dot {
