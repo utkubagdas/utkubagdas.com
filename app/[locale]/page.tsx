@@ -11,7 +11,7 @@ import PullQuote from "@/components/PullQuote";
 import Projects from "@/components/Projects";
 import Journey from "@/components/Journey";
 import GitHubActivity from "@/components/GitHubActivity";
-import Testimonials from "@/components/Testimonials";
+import Studios from "@/components/Studios";
 import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
 import Contact from "@/components/Contact";
@@ -65,7 +65,7 @@ export default async function LocaleHome({
         <Projects locale={l} t={t} />
         <Journey t={t} />
         <GitHubActivity t={t} locale={l} />
-        <Testimonials t={t} />
+        <Studios t={t} />
         <FAQ t={t} />
         <CTA t={t} />
         <Contact t={t} />
