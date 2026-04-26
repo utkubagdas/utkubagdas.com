@@ -62,19 +62,19 @@ export default function MobileMenu({
       </button>
 
       <div
-        className={`fixed inset-0 z-[60] md:hidden ${
+        className={`fixed inset-0 z-[90] md:hidden ${
           open ? "pointer-events-auto" : "pointer-events-none"
         }`}
         aria-hidden={!open}
       >
         <div
           onClick={() => setOpen(false)}
-          className={`absolute inset-0 bg-bg/85 backdrop-blur-md transition-opacity duration-300 ${
+          className={`absolute inset-0 bg-bg/95 backdrop-blur-md transition-opacity duration-300 ${
             open ? "opacity-100" : "opacity-0"
           }`}
         />
         <div
-          className={`absolute inset-y-0 right-0 flex w-full max-w-sm flex-col border-l border-border bg-panel/95 backdrop-blur-xl transition-transform duration-300 ${
+          className={`absolute inset-y-0 right-0 flex w-full max-w-sm flex-col border-l border-border bg-panel transition-transform duration-300 ${
             open ? "translate-x-0" : "translate-x-full"
           }`}
         >
