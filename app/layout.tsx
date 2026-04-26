@@ -6,6 +6,7 @@ import NextTopLoader from "nextjs-toploader";
 import ConsoleEgg from "@/components/ConsoleEgg";
 import KonamiEgg from "@/components/KonamiEgg";
 import SmoothScroll from "@/components/SmoothScroll";
+import ThemeProvider from "@/components/ThemeProvider";
 import "./globals.css";
 
 const inter = Inter({
@@ -58,8 +59,10 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#08090c",
-  colorScheme: "dark",
+  themeColor: [
+    { media: "(prefers-color-scheme: dark)", color: "#08090c" },
+    { media: "(prefers-color-scheme: light)", color: "#fafafc" },
+  ],
 };
 
 export default function RootLayout({
@@ -68,21 +71,27 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="tr" className={`${inter.variable} ${fraunces.variable}`}>
+    <html
+      lang="tr"
+      className={`${inter.variable} ${fraunces.variable}`}
+      suppressHydrationWarning
+    >
       <body className="font-sans">
-        <NextTopLoader
-          color="#34d399"
-          height={2}
-          showSpinner={false}
-          shadow="0 0 10px #34d399, 0 0 5px #34d399"
-        />
-        <SmoothScroll />
-        <div className="grain-overlay" aria-hidden />
-        <ConsoleEgg />
-        <KonamiEgg />
-        {children}
-        <Analytics />
-        <SpeedInsights />
+        <ThemeProvider>
+          <NextTopLoader
+            color="#34d399"
+            height={2}
+            showSpinner={false}
+            shadow="0 0 10px #34d399, 0 0 5px #34d399"
+          />
+          <SmoothScroll />
+          <div className="grain-overlay" aria-hidden />
+          <ConsoleEgg />
+          <KonamiEgg />
+          {children}
+          <Analytics />
+          <SpeedInsights />
+        </ThemeProvider>
       </body>
     </html>
   );

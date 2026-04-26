@@ -8,6 +8,7 @@ import RotatingText from "./RotatingText";
 import HeroTitle from "./HeroTitle";
 import WebGLBackdrop from "./WebGLBackdrop";
 import WebGL3DObject from "./WebGL3DObject";
+import HeroParallax from "./HeroParallax";
 
 export default function Hero({
   locale,
@@ -18,10 +19,14 @@ export default function Hero({
 }) {
   return (
     <section className="relative overflow-hidden border-b border-border">
-      <WebGLBackdrop />
-      <div className="mesh-gradient" aria-hidden />
-      <div className="absolute inset-0 grid-bg" aria-hidden />
-      <Spotlight />
+      <HeroParallax className="absolute inset-0">
+        <div className="depth-1 absolute inset-0">
+          <WebGLBackdrop />
+        </div>
+        <div className="depth-2 absolute inset-0 mesh-gradient" aria-hidden />
+        <div className="depth-2 absolute inset-0 grid-bg" aria-hidden />
+        <Spotlight />
+      </HeroParallax>
       <div
         className="absolute -top-32 left-1/2 h-72 w-[60rem] -translate-x-1/2 rounded-full bg-accent/10 blur-3xl"
         aria-hidden
@@ -81,7 +86,7 @@ export default function Hero({
             </div>
           </div>
 
-          <aside className="reveal reveal-4 flex flex-col gap-4 md:col-span-4">
+          <aside className="reveal reveal-4 depth-3 flex flex-col gap-4 md:col-span-4">
             <div className="rounded-xl border border-border bg-panel/60 p-5 backdrop-blur">
               <div className="flex items-center justify-between border-b border-border/60 pb-3">
                 <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted">

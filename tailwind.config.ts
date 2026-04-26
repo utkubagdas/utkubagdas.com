@@ -5,15 +5,16 @@ const config: Config = {
     "./app/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
   ],
+  darkMode: "class",
   theme: {
     extend: {
       colors: {
-        bg: "#08090c",
-        panel: "#0f1014",
-        border: "#1f1f24",
-        muted: "#8a8a93",
-        accent: "#34d399",
-        "accent-2": "#22d3ee",
+        bg: "rgb(var(--c-bg) / <alpha-value>)",
+        panel: "rgb(var(--c-panel) / <alpha-value>)",
+        border: "rgb(var(--c-border) / <alpha-value>)",
+        muted: "rgb(var(--c-muted) / <alpha-value>)",
+        accent: "rgb(var(--c-accent) / <alpha-value>)",
+        "accent-2": "rgb(var(--c-accent-2) / <alpha-value>)",
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],

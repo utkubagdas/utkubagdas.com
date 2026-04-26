@@ -4,6 +4,7 @@ import MobileMenu from "./MobileMenu";
 import CommandPalette from "./CommandPalette";
 import MagneticLink from "./MagneticLink";
 import LangSwitch from "./LangSwitch";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Header({
   locale,
@@ -59,6 +60,7 @@ export default function Header({
             }))}
             labels={t.cmdk}
           />
+          <ThemeToggle />
           <LangSwitch
             href={`/${otherLocale}`}
             label={t.langSwitch[otherLocale]}

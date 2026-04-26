@@ -17,8 +17,8 @@ export default function SplashScreen() {
     }
     sessionStorage.setItem("splash-shown", "1");
 
-    const t1 = setTimeout(() => setStage("out"), 700);
-    const t2 = setTimeout(() => setStage("gone"), 1300);
+    const t1 = setTimeout(() => setStage("out"), 1500);
+    const t2 = setTimeout(() => setStage("gone"), 2100);
     return () => {
       clearTimeout(t1);
       clearTimeout(t2);
@@ -35,27 +35,67 @@ export default function SplashScreen() {
       }`}
     >
       <div
-        className="pointer-events-none absolute inset-x-0 top-1/2 h-72 -translate-y-1/2 bg-gradient-to-r from-transparent via-accent/15 to-transparent blur-3xl"
+        className="pointer-events-none absolute inset-x-0 top-1/2 h-72 -translate-y-1/2 bg-gradient-to-r from-transparent via-accent/10 to-transparent blur-3xl"
         aria-hidden
       />
-      <div className="relative flex items-center gap-3">
-        <div className="flex h-12 w-12 items-center justify-center rounded-lg border border-border bg-panel/80 font-mono text-sm font-bold text-accent">
-          ub
-        </div>
-        <span className="font-display text-2xl italic text-white/90" style={{ fontWeight: 400 }}>
-          utkubagdas
-          <span className="text-accent">.</span>
-        </span>
-      </div>
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2">
-        <div className="h-px w-32 overflow-hidden bg-border">
-          <div className="h-full w-1/2 origin-left animate-[loadbar_0.9s_ease-in-out_infinite] bg-accent" />
-        </div>
-      </div>
+      <svg
+        viewBox="0 0 80 36"
+        width="240"
+        height="108"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="relative text-white"
+        aria-label="utkubagdas"
+      >
+        {/* u */}
+        <path
+          d="M 5 6 V 20 A 8 8 0 0 0 21 20 V 6"
+          className="splash-stroke"
+          style={{ animationDelay: "100ms" }}
+        />
+        {/* b stem */}
+        <path
+          d="M 32 3 V 28"
+          className="splash-stroke"
+          style={{ animationDelay: "350ms" }}
+        />
+        {/* b bowl */}
+        <path
+          d="M 32 12 A 8 8 0 1 1 32 28 A 8 8 0 1 1 32 12 Z"
+          className="splash-stroke"
+          style={{ animationDelay: "550ms" }}
+        />
+        {/* accent dot */}
+        <circle
+          cx="55"
+          cy="26"
+          r="2.5"
+          fill="currentColor"
+          stroke="none"
+          className="splash-dot text-accent"
+          style={{ animationDelay: "1050ms" }}
+        />
+      </svg>
       <style>{`
-        @keyframes loadbar {
-          0% { transform: translateX(-100%); }
-          100% { transform: translateX(200%); }
+        .splash-stroke {
+          stroke-dasharray: 200;
+          stroke-dashoffset: 200;
+          animation: splash-draw 0.85s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+        }
+        .splash-dot {
+          opacity: 0;
+          transform-origin: center;
+          animation: splash-pop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+        @keyframes splash-draw {
+          to { stroke-dashoffset: 0; }
+        }
+        @keyframes splash-pop {
+          0% { opacity: 0; transform: scale(0); }
+          100% { opacity: 1; transform: scale(1); }
         }
       `}</style>
     </div>
