@@ -29,6 +29,9 @@ type GhEvent = {
   created_at: string;
   payload: {
     commits?: { message: string; sha: string }[];
+    head?: string;
+    before?: string;
+    size?: number;
     ref?: string;
     ref_type?: string;
     pull_request?: { number: number; title: string; html_url: string };
@@ -45,12 +48,22 @@ function eventToActivity(ev: GhEvent): Activity | null {
 
   switch (ev.type) {
     case "PushEvent": {
-      const c = ev.payload.commits?.[ev.payload.commits.length - 1];
-      if (!c) return null;
+      const refName = ev.payload.ref?.replace(/^refs\/heads\//, "") ?? "main";
+      const head = ev.payload.head;
+      const lastCommit =
+        ev.payload.commits?.[ev.payload.commits.length - 1];
+      const size =
+        ev.payload.size ?? ev.payload.commits?.length ?? 1;
+      const fallback =
+        head
+          ? `Pushed ${size} commit${size === 1 ? "" : "s"} to ${refName} · ${head.slice(0, 7)}`
+          : `Pushed ${size} commit${size === 1 ? "" : "s"} to ${refName}`;
       return {
         repo,
-        message: c.message.split("\n")[0],
-        url: `${repoUrl}/commit/${c.sha}`,
+        message: lastCommit?.message?.split("\n")[0] ?? fallback,
+        url: head
+          ? `${repoUrl}/commit/${head}`
+          : `${repoUrl}/commits/${refName}`,
         date,
         kind: "push",
       };
