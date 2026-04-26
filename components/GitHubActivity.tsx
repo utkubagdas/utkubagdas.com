@@ -130,7 +130,7 @@ async function getRecentActivity(): Promise<Activity[] | null> {
     const res = await fetch(
       `https://api.github.com/users/${GH_USERNAME}/events/public`,
       {
-        next: { revalidate: 1800 },
+        next: { revalidate: 300 },
         headers: { Accept: "application/vnd.github+json" },
       }
     );
