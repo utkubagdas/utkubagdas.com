@@ -3,11 +3,11 @@ import LocalTime from "./LocalTime";
 import Spotlight from "./Spotlight";
 import Marquee from "./Marquee";
 import MagneticLink from "./MagneticLink";
-import CodeEditor from "./CodeEditor";
+import Terminal from "./Terminal";
 import RotatingText from "./RotatingText";
 
 export default function Hero({
-  locale: _locale,
+  locale,
   t,
 }: {
   locale: Locale;
@@ -99,7 +99,7 @@ export default function Hero({
                 />
               </dl>
             </div>
-            <CodeEditor />
+            <Terminal locale={locale} />
           </aside>
         </div>
       </div>

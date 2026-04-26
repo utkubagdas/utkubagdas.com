@@ -5,6 +5,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import NextTopLoader from "nextjs-toploader";
 import ConsoleEgg from "@/components/ConsoleEgg";
 import KonamiEgg from "@/components/KonamiEgg";
+import SmoothScroll from "@/components/SmoothScroll";
 import "./globals.css";
 
 const inter = Inter({
@@ -75,6 +76,7 @@ export default function RootLayout({
           showSpinner={false}
           shadow="0 0 10px #34d399, 0 0 5px #34d399"
         />
+        <SmoothScroll />
         <div className="grain-overlay" aria-hidden />
         <ConsoleEgg />
         <KonamiEgg />
