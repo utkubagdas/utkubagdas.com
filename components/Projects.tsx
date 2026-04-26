@@ -3,7 +3,6 @@ import type { Dictionary, Locale } from "@/lib/i18n/dictionaries";
 import { projects, type Project } from "@/lib/projects";
 import SectionHeading from "./SectionHeading";
 import TiltCard from "./TiltCard";
-import ProjectsViewport from "./ProjectsViewport";
 
 export default function Projects({
   locale,
@@ -24,20 +23,18 @@ export default function Projects({
           subtitle={t.projects.subtitle}
         />
 
-        <ProjectsViewport label={t.projects.viewProject}>
-          <div className="mt-12 grid gap-4 md:grid-cols-3">
-            <FeaturedCard project={featured} locale={locale} t={t} />
-            {rest.map((p, i) => (
-              <div
-                key={p.slug}
-                data-reveal
-                data-reveal-delay={((i % 3) + 1) as 1 | 2 | 3}
-              >
-                <Card project={p} locale={locale} t={t} />
-              </div>
-            ))}
-          </div>
-        </ProjectsViewport>
+        <div className="mt-12 grid gap-4 md:grid-cols-3">
+          <FeaturedCard project={featured} locale={locale} t={t} />
+          {rest.map((p, i) => (
+            <div
+              key={p.slug}
+              data-reveal
+              data-reveal-delay={((i % 3) + 1) as 1 | 2 | 3}
+            >
+              <Card project={p} locale={locale} t={t} />
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
