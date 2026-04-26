@@ -7,6 +7,7 @@ import Terminal from "./Terminal";
 import RotatingText from "./RotatingText";
 import HeroTitle from "./HeroTitle";
 import WebGLBackdrop from "./WebGLBackdrop";
+import WebGL3DObject from "./WebGL3DObject";
 
 export default function Hero({
   locale,
@@ -101,6 +102,7 @@ export default function Hero({
                 />
               </dl>
             </div>
+            <WebGL3DObject />
             <Terminal locale={locale} />
           </aside>
         </div>
