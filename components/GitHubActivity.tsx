@@ -2,11 +2,22 @@ import type { Dictionary } from "@/lib/i18n/dictionaries";
 
 const GH_USERNAME = "utkubagdas";
 
-type Commit = {
+type ActivityKind =
+  | "push"
+  | "pr"
+  | "create"
+  | "public"
+  | "release"
+  | "issue"
+  | "star"
+  | "fork";
+
+type Activity = {
   repo: string;
   message: string;
   url: string;
   date: string;
+  kind: ActivityKind;
 };
 
 type GhEvent = {
@@ -15,12 +26,106 @@ type GhEvent = {
   created_at: string;
   payload: {
     commits?: { message: string; sha: string }[];
+    ref?: string;
     ref_type?: string;
-    description?: string;
+    pull_request?: { number: number; title: string; html_url: string };
+    issue?: { number: number; title: string; html_url: string };
+    release?: { name: string | null; tag_name?: string; html_url: string };
+    action?: string;
   };
 };
 
-async function getRecentCommits(): Promise<Commit[] | null> {
+function eventToActivity(ev: GhEvent): Activity | null {
+  const repo = ev.repo.name;
+  const repoUrl = `https://github.com/${repo}`;
+  const date = ev.created_at;
+
+  switch (ev.type) {
+    case "PushEvent": {
+      const c = ev.payload.commits?.[ev.payload.commits.length - 1];
+      if (!c) return null;
+      return {
+        repo,
+        message: c.message.split("\n")[0],
+        url: `${repoUrl}/commit/${c.sha}`,
+        date,
+        kind: "push",
+      };
+    }
+    case "PullRequestEvent": {
+      const pr = ev.payload.pull_request;
+      if (!pr) return null;
+      return {
+        repo,
+        message: `${ev.payload.action ?? "updated"} PR #${pr.number} · ${pr.title}`,
+        url: pr.html_url,
+        date,
+        kind: "pr",
+      };
+    }
+    case "CreateEvent": {
+      const ref = ev.payload.ref_type ?? "ref";
+      const name = ev.payload.ref ? ` "${ev.payload.ref}"` : "";
+      return {
+        repo,
+        message: `Created ${ref}${name}`,
+        url: repoUrl,
+        date,
+        kind: "create",
+      };
+    }
+    case "PublicEvent":
+      return {
+        repo,
+        message: "Made repository public",
+        url: repoUrl,
+        date,
+        kind: "public",
+      };
+    case "ReleaseEvent": {
+      const r = ev.payload.release;
+      if (!r) return null;
+      return {
+        repo,
+        message: `Released ${r.name ?? r.tag_name ?? ""}`.trim(),
+        url: r.html_url,
+        date,
+        kind: "release",
+      };
+    }
+    case "IssuesEvent": {
+      const i = ev.payload.issue;
+      if (!i) return null;
+      return {
+        repo,
+        message: `${ev.payload.action ?? "updated"} issue #${i.number} · ${i.title}`,
+        url: i.html_url,
+        date,
+        kind: "issue",
+      };
+    }
+    case "WatchEvent":
+      return {
+        repo,
+        message: "Starred repository",
+        url: repoUrl,
+        date,
+        kind: "star",
+      };
+    case "ForkEvent":
+      return {
+        repo,
+        message: "Forked repository",
+        url: repoUrl,
+        date,
+        kind: "fork",
+      };
+    default:
+      return null;
+  }
+}
+
+async function getRecentActivity(): Promise<Activity[] | null> {
   try {
     const res = await fetch(
       `https://api.github.com/users/${GH_USERNAME}/events/public`,
@@ -31,21 +136,13 @@ async function getRecentCommits(): Promise<Commit[] | null> {
     );
     if (!res.ok) return null;
     const events = (await res.json()) as GhEvent[];
-    const commits: Commit[] = [];
+    const list: Activity[] = [];
     for (const ev of events) {
-      if (ev.type !== "PushEvent" || !ev.payload.commits) continue;
-      for (const c of ev.payload.commits) {
-        if (commits.length >= 5) break;
-        commits.push({
-          repo: ev.repo.name,
-          message: c.message.split("\n")[0],
-          url: `https://github.com/${ev.repo.name}/commit/${c.sha}`,
-          date: ev.created_at,
-        });
-      }
-      if (commits.length >= 5) break;
+      const a = eventToActivity(ev);
+      if (a) list.push(a);
+      if (list.length >= 6) break;
     }
-    return commits;
+    return list;
   } catch {
     return null;
   }
@@ -65,6 +162,28 @@ function relative(date: string, locale: "tr" | "en"): string {
   return rtf.format(-Math.round(d / 30), "month");
 }
 
+const KIND_LABELS: Record<ActivityKind, string> = {
+  push: "PUSH",
+  pr: "PR",
+  create: "NEW",
+  public: "PUBLIC",
+  release: "REL",
+  issue: "ISSUE",
+  star: "★",
+  fork: "FORK",
+};
+
+const KIND_COLORS: Record<ActivityKind, string> = {
+  push: "border-accent/40 bg-accent/10 text-accent",
+  pr: "border-violet-400/40 bg-violet-400/10 text-violet-300",
+  create: "border-sky-400/40 bg-sky-400/10 text-sky-300",
+  public: "border-cyan-400/40 bg-cyan-400/10 text-cyan-300",
+  release: "border-amber-400/40 bg-amber-400/10 text-amber-300",
+  issue: "border-orange-400/40 bg-orange-400/10 text-orange-300",
+  star: "border-yellow-400/40 bg-yellow-400/10 text-yellow-300",
+  fork: "border-white/20 bg-white/5 text-white/70",
+};
+
 export default async function GitHubActivity({
   t,
   locale,
@@ -72,7 +191,7 @@ export default async function GitHubActivity({
   t: Dictionary;
   locale: "tr" | "en";
 }) {
-  const commits = await getRecentCommits();
+  const activity = await getRecentActivity();
 
   return (
     <section className="border-b border-border py-24 md:py-32">
@@ -95,7 +214,9 @@ export default async function GitHubActivity({
             >
               {t.activity.title}
             </h2>
-            <p className="mt-3 max-w-xl text-sm text-muted">{t.activity.subtitle}</p>
+            <p className="mt-3 max-w-xl text-sm text-muted">
+              {t.activity.subtitle}
+            </p>
           </div>
           <a
             href={`https://github.com/${GH_USERNAME}`}
@@ -109,24 +230,29 @@ export default async function GitHubActivity({
         </div>
 
         <div data-reveal className="mt-10 overflow-hidden rounded-xl border border-border bg-panel/40">
-          {commits && commits.length > 0 ? (
+          {activity && activity.length > 0 ? (
             <ul className="divide-y divide-border">
-              {commits.map((c, i) => (
-                <li key={`${c.url}-${i}`} className="transition-colors hover:bg-panel">
+              {activity.map((a, i) => (
+                <li key={`${a.url}-${i}`} className="transition-colors hover:bg-panel">
                   <a
-                    href={c.url}
+                    href={a.url}
                     target="_blank"
                     rel="noreferrer"
-                    className="flex flex-col gap-1 px-5 py-4 md:flex-row md:items-center md:gap-6"
+                    className="flex flex-col gap-2 px-5 py-4 md:flex-row md:items-center md:gap-4"
                   >
-                    <span className="font-mono text-[11px] uppercase tracking-widest text-muted md:w-44 md:shrink-0">
-                      {c.repo}
+                    <span
+                      className={`inline-flex w-fit items-center justify-center rounded-md border px-2 py-0.5 font-mono text-[10px] uppercase tracking-widest md:w-14 md:shrink-0 ${KIND_COLORS[a.kind]}`}
+                    >
+                      {KIND_LABELS[a.kind]}
+                    </span>
+                    <span className="font-mono text-[11px] uppercase tracking-widest text-muted md:w-44 md:shrink-0 md:truncate">
+                      {a.repo.replace(`${GH_USERNAME}/`, "")}
                     </span>
                     <span className="flex-1 truncate text-sm text-white/90">
-                      {c.message}
+                      {a.message}
                     </span>
                     <span className="font-mono text-[10px] uppercase tracking-widest text-muted/70 md:shrink-0">
-                      {relative(c.date, locale)}
+                      {relative(a.date, locale)}
                     </span>
                   </a>
                 </li>
@@ -134,7 +260,7 @@ export default async function GitHubActivity({
             </ul>
           ) : (
             <p className="px-5 py-8 text-center text-sm text-muted">
-              {commits === null ? t.activity.offline : t.activity.empty}
+              {activity === null ? t.activity.offline : t.activity.empty}
             </p>
           )}
         </div>
