@@ -7,6 +7,7 @@ import About from "@/components/About";
 import Currently from "@/components/Currently";
 import Services from "@/components/Services";
 import Process from "@/components/Process";
+import CodeShowcase from "@/components/CodeShowcase";
 import PullQuote from "@/components/PullQuote";
 import Projects from "@/components/Projects";
 import Journey from "@/components/Journey";
@@ -61,6 +62,7 @@ export default async function LocaleHome({
         <Currently t={t} />
         <Services t={t} locale={l} />
         <Process t={t} />
+        <CodeShowcase t={t} locale={l} />
         <PullQuote t={t} />
         <Projects locale={l} t={t} />
         <Journey t={t} />

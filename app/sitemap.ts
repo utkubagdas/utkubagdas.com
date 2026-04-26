@@ -2,13 +2,14 @@ import type { MetadataRoute } from "next";
 import { locales } from "@/lib/i18n/dictionaries";
 import { projects } from "@/lib/projects";
 import { posts } from "@/lib/posts";
+import { devlogs } from "@/lib/devlogs";
 import { serviceSlugs } from "@/lib/services";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://utkubagdas.com";
   const now = new Date();
 
-  const topRoutes = ["", "uses", "now", "cv", "press", "blog"];
+  const topRoutes = ["", "uses", "now", "cv", "press", "blog", "devlog"];
 
   const out: MetadataRoute.Sitemap = [];
 
@@ -51,6 +52,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
         url: `${base}/${locale}/blog/${post.slug}`,
         lastModified: new Date(post.date),
         changeFrequency: "yearly",
+        priority: 0.5,
+      });
+    }
+    for (const log of devlogs) {
+      out.push({
+        url: `${base}/${locale}/devlog/${log.slug}`,
+        lastModified: new Date(log.date),
+        changeFrequency: "monthly",
         priority: 0.5,
       });
     }

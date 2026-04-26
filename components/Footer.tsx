@@ -23,6 +23,7 @@ export default function Footer({
     { href: `/${locale}/now`, label: "/now" },
     { href: `/${locale}/cv`, label: "/cv" },
     { href: `/${locale}/blog`, label: "/blog" },
+    { href: `/${locale}/devlog`, label: "/devlog" },
     { href: `/${locale}/press`, label: "/press" },
   ];
 

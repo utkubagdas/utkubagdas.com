@@ -168,6 +168,12 @@ export const dictionaries = {
         "6 yıl boyunca 60 FPS oyun motorunda öğrendiğim disiplini SaaS ürünlerine taşıyorum: oynatılabilir, ölçeklenebilir, sürdürülebilir.",
       attribution: "Çalışma felsefesi",
     },
+    codeshow: {
+      label: "Kod kalitesi",
+      title: "Yazdığım kod nasıl görünür",
+      subtitle:
+        "50+ shipped başlık boyunca biriktirdiğim Unity / C# yardımcıları — kalite ve okunabilirlik vitrini.",
+    },
     services: {
       label: "02 — Hizmetler",
       title: "Sunduğum hizmetler",
@@ -696,6 +702,12 @@ export const dictionaries = {
       quote:
         "I bring 6 years of 60-FPS game-engine discipline into SaaS products: playable, scalable, sustainable.",
       attribution: "Working philosophy",
+    },
+    codeshow: {
+      label: "Code quality",
+      title: "What my code looks like",
+      subtitle:
+        "Unity / C# helpers I've sharpened across 50+ shipped titles — a window into quality and readability.",
     },
     services: {
       label: "02 — Services",
