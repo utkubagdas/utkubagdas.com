@@ -6,6 +6,7 @@ import MagneticLink from "./MagneticLink";
 import Terminal from "./Terminal";
 import RotatingText from "./RotatingText";
 import HeroTitle from "./HeroTitle";
+import WebGLBackdrop from "./WebGLBackdrop";
 
 export default function Hero({
   locale,
@@ -16,6 +17,7 @@ export default function Hero({
 }) {
   return (
     <section className="relative overflow-hidden border-b border-border">
+      <WebGLBackdrop />
       <div className="mesh-gradient" aria-hidden />
       <div className="absolute inset-0 grid-bg" aria-hidden />
       <Spotlight />
