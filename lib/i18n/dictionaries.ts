@@ -15,39 +15,39 @@ export const dictionaries = {
     hero: {
       tag: "Müsait — yeni projelere açık",
       title: "Utku Bağdaş",
-      role: "Full-stack Developer",
+      role: "Lead Game Developer · SaaS Builder",
       lede:
-        "Şirketler için ölçeklenebilir web uygulamaları ve özel yazılım çözümleri tasarlıyor, geliştiriyorum.",
-      sub: "Modern stack, hızlı teslim, sürdürülebilir kod.",
+        "6.5+ yıldır Unity ile mobil ve PC oyunlar geliştiriyorum. App Store ve Play Store'da 50+ yayınlanmış oyun.",
+      sub: "Son 1 yıldır şirketler için AI destekli SaaS ürünleri ve otomasyonlar üretiyorum.",
       cta: "Projeleri gör",
       ctaSecondary: "İletişime geç",
       rotatingPrefix: "Geliştiriyorum:",
       rotatingItems: [
-        "Web uygulamaları",
-        "Mobil ürünler",
-        "AI entegrasyonları",
-        "Kurumsal SaaS",
-        "Oyun / 3D arayüz",
+        "Mobil oyunlar",
+        "Steam / PC oyunları",
+        "AI destekli SaaS",
+        "Otomasyon araçları",
+        "AR / VR deneyimler",
       ],
       statusLocation: "Türkiye",
       statusLocaltime: "Yerel Saat",
-      statusFocus: "Şu an üzerinde çalıştığım",
-      statusFocusValue: "Claude Code ile özel ürünler",
+      statusFocus: "Şu an",
+      statusFocusValue: "Lead Game Dev @ Mimiko + AI SaaS",
       scrollHint: "Aşağı kaydır",
     },
     stats: {
       items: [
-        { value: "5+", label: "Yıllık deneyim" },
-        { value: "20+", label: "Tamamlanan proje" },
-        { value: "10+", label: "Mutlu müşteri" },
-        { value: "24s", label: "Ortalama yanıt süresi" },
+        { value: "6+", label: "Yıllık game dev deneyimi" },
+        { value: "50+", label: "Yayınlanmış oyun" },
+        { value: "5+", label: "Stüdyo & şirket" },
+        { value: "24s", label: "Yanıt süresi" },
       ],
     },
     about: {
       label: "01 — Hakkımda",
-      title: "Şirketlere uçtan uca yazılım çözümleri",
+      title: "Lead Game Developer + AI destekli SaaS Builder",
       body:
-        "Şahıs şirketim üzerinden firmalara özel yazılım çözümleri sunuyorum. İhtiyacınızı analiz edip en uygun mimariyi kuruyor, uçtan uca tek elden yönetiyorum: tasarım, geliştirme, dağıtım ve sürdürme.",
+        "Mimiko Technology'de (London, remote) Lead Full-Stack Game Developer olarak ekip yönetiyorum. 6.5+ yıldır Unity / C# ekosisteminde mobil, Steam ve WebGL oyunları geliştirdim — 50+ yayınlanmış proje var. 2025'ten beri kendi şahıs şirketim üzerinden şirketlere AI destekli SaaS ürünleri, otomasyon araçları ve özel yazılımlar sunuyorum.",
       principlesTitle: "Çalışma prensiplerim",
       principles: [
         {
@@ -59,8 +59,8 @@ export const dictionaries = {
           desc: "Her hafta görülebilir ilerleme, gizli sürpriz yok.",
         },
         {
-          title: "Sürdürülebilir kod",
-          desc: "Ekipsiz devralınabilen, okunabilir, test edilebilir teslimat.",
+          title: "Game-grade kod kalitesi",
+          desc: "60 FPS oyun motorunda öğrenilen disiplini SaaS ürünlerine taşıyorum.",
         },
         {
           title: "Şeffaf iletişim",
@@ -70,24 +70,28 @@ export const dictionaries = {
       stackLabel: "Çalıştığım araçlar",
       stackGroups: [
         {
-          name: "Frontend & Mobil",
-          items: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Flutter"],
+          name: "Game Engine & Tools",
+          items: ["Unity", "C#", ".NET", "DOTween", "Cinemachine", "Odin Inspector"],
         },
         {
-          name: "Backend",
-          items: ["Node.js", ".NET", "C#", "Postgres", "Prisma"],
+          name: "Multiplayer & Network",
+          items: ["Photon", "Mirror", "Netcode", "Fishnet"],
         },
         {
-          name: "Oyun & 3D",
-          items: ["Unity", "C#"],
+          name: "AR / VR",
+          items: ["ARKit", "AR Foundation", "Oculus SDK", "Unity XR"],
+        },
+        {
+          name: "Platform",
+          items: ["iOS", "Android", "Steam", "WebGL"],
+        },
+        {
+          name: "SaaS / Web",
+          items: ["Next.js", "React", "TypeScript", "Tailwind", "Flutter", "Firebase"],
         },
         {
           name: "AI / Tooling",
           items: ["Claude Code", "Claude API", "OpenAI"],
-        },
-        {
-          name: "Altyapı",
-          items: ["Vercel", "Firebase", "Cloudflare", "GitHub Actions"],
         },
       ],
     },
@@ -97,15 +101,15 @@ export const dictionaries = {
       items: [
         {
           k: "Geliştiriyorum",
-          desc: "Claude Code ile şahıs şirketim için ürünler ve B2B müşterilerime özel yazılım çözümleri.",
+          desc: "Mimiko'da Lead Game Dev olarak Unity projeleri + şahıs şirketim üzerinden AI destekli SaaS ürünleri.",
         },
         {
-          k: "Okuyorum",
-          desc: "Working in Public — Nadia Eghbal. İnternet üretkenliği üzerine.",
+          k: "Öğreniyorum",
+          desc: "AI agent mimarileri, Claude Code ile akış otomasyonları ve oyun motoru içi LLM entegrasyonları.",
         },
         {
-          k: "Dinliyorum",
-          desc: "Lo-fi ve ambient elektronik. Odaklanma için Brian Eno karışımları.",
+          k: "Konum",
+          desc: "Türkiye'den remote çalışıyorum. Mimiko Technology UK merkezli.",
         },
       ],
     },
@@ -122,61 +126,77 @@ export const dictionaries = {
       title: "Bugüne nasıl geldim",
       items: [
         {
-          year: "2026",
-          title: "Şahıs şirketi & freelance",
+          year: "2025",
+          title: "Şahıs şirketi · AI-powered SaaS",
           desc:
-            "Türkiye merkezli kendi şirketim üzerinden firmalara özel yazılım çözümleri sunmaya başladım.",
+            "Türkiye'de kendi şahıs şirketimi açtım. Şirketlere AI destekli SaaS ürünleri ve otomasyon yazılımları sunmaya başladım — game dev disiplinini ürün geliştirmeye taşıyorum.",
         },
         {
           year: "2024",
-          title: "AI-first ürün geliştirme",
-          desc: "Claude Code ile çok daha hızlı ve sürdürülebilir kod üretmeye odaklandım.",
+          title: "Lead Full-Stack Game Developer · Mimiko Technology",
+          desc:
+            "London merkezli Mimiko Technology'ye Lead Full-Stack Game Developer olarak katıldım. Unity + backend + DevOps ekip yönetimi, remote.",
+        },
+        {
+          year: "2023",
+          title: "Game Developer · eleman.net",
+          desc:
+            "İstanbul Ataşehir'de eleman.net'te tam zamanlı Game Developer. 'Meta Life: Your Second Home' mobil oyunu üzerinde çalıştım.",
         },
         {
           year: "2022",
-          title: "Full-stack geçiş",
+          title: "Omnio Games + Ace Games · 10+ yayınlanmış oyun",
           desc:
-            "React + Node.js ekosisteminde tam yığın geliştirici olarak ürünleştirme deneyimi.",
+            "Hypercasual ve mid-core mobil oyun stüdyolarında Game Developer. Rope Archer, Knit Up!, Crossing Crowd, Squad League gibi shipped başlıklar.",
+        },
+        {
+          year: "2021",
+          title: "Game Developer · Kaiju Games İstanbul",
+          desc:
+            "Profesyonel game development kariyerime ilk full-time pozisyonumla başladım. Aynı yıl Kodluyoruz Mobil Oyun Bootcamp sertifikasını aldım.",
         },
         {
           year: "2020",
-          title: "Yazılıma giriş",
+          title: "Unity'ye başladım",
           desc:
-            "Web teknolojileriyle ilk projelerimi yapmaya başladım; HTML / CSS / JavaScript temelleri.",
+            "Anadolu Üniversitesi Yönetim Bilişim Sistemleri okurken Unity / C# ile oyun geliştirmeye odaklandım.",
         },
       ],
     },
     pull: {
       quote:
-        "Yazılımı, gerçek ürünlere — şirketinize değer katan, ölçeklenebilir ve sürdürülebilir çözümlere — çeviriyorum.",
+        "6 yıl boyunca 60 FPS oyun motorunda öğrendiğim disiplini SaaS ürünlerine taşıyorum: oynatılabilir, ölçeklenebilir, sürdürülebilir.",
       attribution: "Çalışma felsefesi",
     },
     services: {
       label: "02 — Hizmetler",
       title: "Sunduğum hizmetler",
       subtitle:
-        "İhtiyacınıza göre paketlenmiş çözümler — küçük bir kurumsal siteden tam ürünleştirilmiş SaaS'a kadar.",
+        "Mobil ve PC oyunlardan AI destekli SaaS ürünlerine — şirketler için interactive yazılım çözümleri.",
       items: [
         {
-          title: "Web Uygulaması Geliştirme",
+          title: "Mobil & PC Oyun Geliştirme",
           desc:
-            "Next.js, React ve modern backend teknolojileriyle ölçeklenebilir SaaS ve iç araçlar.",
-          bullets: ["Auth & roller", "Ödeme entegrasyonu", "Admin panelleri"],
+            "Unity / C# ile mobile, Steam ve WebGL platformlarda oyun geliştirme. 50+ shipped başlık deneyimi.",
+          bullets: ["Hypercasual & mid-core", "Multiplayer (Photon/Mirror)", "Live ops & analytics"],
         },
         {
-          title: "Kurumsal Web Sitesi",
-          desc: "SEO odaklı, hızlı ve yönetilebilir kurumsal siteler.",
-          bullets: ["İçerik yönetimi (CMS)", "Çok dilli destek", "Analitik"],
+          title: "AI Destekli SaaS",
+          desc:
+            "Şirketler için Claude ve diğer LLM'lerle güçlendirilmiş SaaS ürünleri ve internal tools.",
+          bullets: ["Akıllı otomasyon", "Veri zekası", "Custom dashboard"],
         },
         {
-          title: "AI Entegrasyonları",
-          desc: "Claude ve diğer LLM'lerle iş akışlarınıza yapay zekâ entegrasyonu.",
-          bullets: ["Otomatik raporlama", "Akıllı asistanlar", "Veriden içgörü"],
+          title: "Otomasyon & İş Akışları",
+          desc:
+            "Operasyonel iş akışlarınızı otomatikleştiren özel yazılımlar ve admin paneller.",
+          bullets: ["Workflow automation", "İç araçlar", "Veri entegrasyonları"],
         },
         {
-          title: "Bakım & Destek",
-          desc: "Mevcut ürünleriniz için sürekli geliştirme, bakım ve teknik destek.",
-          bullets: ["Aylık paketler", "Hata düzeltme", "Performans iyileştirme"],
+          title: "AR / VR & Interactive",
+          desc:
+            "Unity XR, ARKit, AR Foundation ve Oculus SDK ile simülasyon, training ve interactive deneyimler.",
+          bullets: ["AR ürün gösterim", "VR training", "Interactive simülasyon"],
         },
       ],
     },
@@ -225,13 +245,13 @@ export const dictionaries = {
       items: [
         {
           quote:
-            "Sürecin başından sonuna kadar şeffaf ve hızlıydı. Tam istediğimiz ürünü teslim aldık.",
+            "Game-grade teknik disiplini SaaS projemize taşıdı. Performans, kararlılık ve teslim hızı beklentilerin çok üstündeydi.",
           author: "Müşteri Adı",
           role: "Kurucu — Şirket A",
         },
         {
           quote:
-            "Karmaşık bir entegrasyonu temiz ve sürdürülebilir biçimde çözdü. Tavsiye ediyoruz.",
+            "Unity'deki yıllarının verdiği problem-çözme refleksi, AI destekli iç araç projemizde fark yarattı.",
           author: "Müşteri Adı",
           role: "CTO — Şirket B",
         },
@@ -242,24 +262,24 @@ export const dictionaries = {
       title: "Sıkça sorulan sorular",
       items: [
         {
+          q: "Tam zamanlı bir işin var, freelance projelere nasıl vakit ayırıyorsun?",
+          a: "Mimiko Technology'de Lead Game Dev olarak full-time çalışıyorum (London, remote). Şahıs şirketim üzerinden aldığım freelance işler mesai dışı saatlerde yürür — net takvim, gerçekçi söz veririm.",
+        },
+        {
+          q: "Sadece oyun geliştirme mi, web/SaaS de yapıyor musun?",
+          a: "İkisi de. 6.5 yıl Unity / C# game dev ana uzmanlığım. Son 1 yıldır AI destekli SaaS, otomasyon ve Flutter tarafında şirketler için ürünler de üretiyorum.",
+        },
+        {
           q: "Bir projenin teslim süresi ne kadar?",
-          a: "Kapsama göre değişir. Tipik kurumsal site 2–3 hafta, orta ölçekli web uygulaması 6–12 hafta arasında tamamlanır. Keşif görüşmesinden sonra net bir takvim paylaşırım.",
+          a: "Kapsama göre değişir. Hypercasual prototype 1–2 hafta, mid-core mobile oyun 8–16 hafta, AI destekli SaaS MVP'si 4–8 hafta. Keşif görüşmesinden sonra net takvim paylaşırım.",
         },
         {
           q: "Faturalandırma nasıl çalışıyor?",
           a: "Şahıs şirketim üzerinden Türkiye ve yurt dışına resmi fatura kesiyorum. Sabit fiyat veya saatlik anlaşma seçeneklerinden ihtiyacınıza uygun olanı belirliyoruz.",
         },
         {
-          q: "Mevcut ekibimle çalışabilir misin?",
-          a: "Evet. Mevcut ekibinizin bir parçası gibi çalışabilir, kod incelemelerine ve standartlarınıza uyum sağlayabilirim.",
-        },
-        {
-          q: "Yayın sonrası destek veriyor musun?",
-          a: "Evet. Aylık bakım paketleri sunuyorum: hata düzeltme, küçük geliştirmeler, izleme ve performans iyileştirme dahil.",
-        },
-        {
           q: "NDA / gizlilik sözleşmesi imzalıyor musun?",
-          a: "Evet, tüm projelerde gizlilik sözleşmesi imzalıyorum.",
+          a: "Evet, tüm projelerde gizlilik sözleşmesi imzalıyorum. Önceki stüdyo projelerinin de pek çoğu NDA altındadır.",
         },
       ],
     },
@@ -311,43 +331,44 @@ export const dictionaries = {
         {
           name: "Donanım",
           items: [
-            { k: "Bilgisayar", v: "MacBook Pro / Windows masaüstü" },
-            { k: "Monitör", v: "27\" 4K, ergonomik kol üzerinde" },
+            { k: "Bilgisayar", v: "Geliştirme makinesi (Windows + macOS)" },
+            { k: "Test cihazları", v: "iPhone + Android + iPad (build doğrulama)" },
+            { k: "Monitör", v: "27\" 4K + ek monitor" },
             { k: "Klavye", v: "Mekanik, tactile switch" },
             { k: "Mouse", v: "Logitech MX Master" },
-            { k: "Kulaklık", v: "Sony WH-1000XM5 (gürültü engelleme)" },
-            { k: "Mikrofon", v: "Shure MV7 (toplantı / kayıt)" },
+            { k: "Kulaklık", v: "Gürültü engellemeli (uzun build maraton'ları için)" },
           ],
         },
         {
-          name: "Editör & Geliştirme",
+          name: "Game Dev",
           items: [
-            { k: "Editör", v: "VS Code + Cursor" },
-            { k: "AI Eşi", v: "Claude Code (terminal)" },
-            { k: "Terminal", v: "Warp" },
-            { k: "Tarayıcı", v: "Arc, Chrome (DevTools)" },
-            { k: "Tema", v: "Karanlık, accent yeşil" },
-            { k: "Font", v: "Geist Mono, JetBrains Mono" },
+            { k: "Engine", v: "Unity (LTS)" },
+            { k: "IDE", v: "JetBrains Rider · Visual Studio" },
+            { k: "Plugins", v: "DOTween, Cinemachine, Odin Inspector" },
+            { k: "Multiplayer", v: "Photon, Mirror, Netcode, Fishnet" },
+            { k: "AR / VR", v: "ARKit, AR Foundation, Oculus SDK, Unity XR" },
+            { k: "Asset", v: "Aseprite, Blender (light)" },
           ],
         },
         {
-          name: "Araçlar & Servisler",
+          name: "SaaS & Web",
           items: [
-            { k: "Versiyonlama", v: "Git, GitHub" },
+            { k: "Editör", v: "VS Code + Cursor + Claude Code" },
+            { k: "Stack", v: "Next.js, React, TypeScript, Tailwind, Flutter" },
+            { k: "DB", v: "Firebase, Postgres (Neon, Supabase)" },
             { k: "Hosting", v: "Vercel, Cloudflare" },
-            { k: "DB", v: "Postgres (Neon, Supabase)" },
-            { k: "Analitik", v: "Vercel Analytics, Plausible" },
-            { k: "İletişim", v: "Linear, Slack, Telegram" },
-            { k: "Tasarım", v: "Figma, FigJam" },
+            { k: "AI", v: "Claude API, Claude Code, OpenAI" },
+            { k: "Tarayıcı", v: "Arc, Chrome (DevTools)" },
           ],
         },
         {
-          name: "Tarayıcı eklentileri",
+          name: "Servisler & Araçlar",
           items: [
-            { k: "1Password", v: "Şifre yöneticisi" },
-            { k: "React DevTools", v: "Component inceleme" },
-            { k: "Wappalyzer", v: "Site stack tespiti" },
-            { k: "JSON Viewer", v: "API yanıtlarını biçimleme" },
+            { k: "Versiyonlama", v: "Git, GitHub, Plastic SCM (Unity)" },
+            { k: "Tasarım", v: "Figma, Adobe Creative Cloud" },
+            { k: "İletişim", v: "Slack, Discord, Telegram" },
+            { k: "Analytics", v: "Firebase Analytics, GameAnalytics, Vercel Analytics" },
+            { k: "PM", v: "Linear, Notion, Trello" },
           ],
         },
       ],
@@ -360,28 +381,24 @@ export const dictionaries = {
       updated: "Son güncelleme",
       sections: [
         {
-          h: "Üzerinde çalıştığım",
+          h: "Tam zamanlı işim",
           body:
-            "Şahıs şirketim üzerinden firmalara özel yazılım çözümleri geliştiriyorum. Çoğunlukla Next.js + TypeScript ekseninde, son dönemde mobil için Flutter ve oyun tarafında Unity ile de projeler üretiyorum.",
+            "Mimiko Technology'de (London, Remote) Lead Full-Stack Game Developer olarak çalışıyorum — Unity / C# + backend + DevOps + ekip lideri. Multi-platform mobil ve PC oyun projelerini yönetiyorum.",
+        },
+        {
+          h: "Freelance üretimim",
+          body:
+            "Türkiye'de açtığım şahıs şirketim üzerinden mesai dışı saatlerde şirketlere AI destekli SaaS ürünleri, otomasyon araçları ve özel yazılımlar üretiyorum. Şu an birkaç MVP üzerinde çalışıyorum.",
         },
         {
           h: "Öğrendiğim",
           body:
-            "Claude Code'un agent-based geliştirme yetkinliklerini derinleştiriyorum. AI'ın günlük geliştirme akışına nasıl en sürdürülebilir biçimde girdiğine dair pratik notlar tutuyorum.",
-        },
-        {
-          h: "Okuduğum",
-          body:
-            "Working in Public — Nadia Eghbal. İnternet üreticilerinin ekonomisi üzerine. Yan masada Kent Beck'in TDD klasiği duruyor.",
-        },
-        {
-          h: "Dinlediğim",
-          body:
-            "Lo-fi, Brian Eno ambient ve odaklanma için Helios karışımları. Kahve molalarında Türkçe podcast: 'Hidden Things'.",
+            "Claude Code'un agent-based geliştirme yetkinliklerini ve oyun motoru içi LLM entegrasyonlarını derinleştiriyorum. AI'ın hem game dev hem SaaS akışlarına nasıl en sürdürülebilir biçimde girdiğine dair pratik notlar tutuyorum.",
         },
         {
           h: "Konum",
-          body: "Türkiye, Istanbul. Uzaktan çalışıyor, gerektiğinde gidip görüşüyorum.",
+          body:
+            "Türkiye'den remote çalışıyorum. Mimiko UK merkezli; freelance projeler için sektör farketmeksizin Türkiye + yurt dışından şirketlerle çalışıyorum.",
         },
       ],
     },
@@ -389,33 +406,76 @@ export const dictionaries = {
       title: "Özgeçmiş",
       printLabel: "Yazdır / PDF olarak kaydet",
       backHome: "Ana sayfaya dön",
-      headline: "Full-stack Developer",
+      headline: "Lead Game Developer · SaaS Builder",
       summary:
-        "5+ yıllık deneyime sahip, end-to-end ürün geliştirme odaklı bir full-stack developer. Next.js, React, TypeScript ekosisteminde uzmanlaşmış; .NET, Flutter ve Unity ile çapraz alanlarda da üretim deneyimi var.",
+        "6.5+ yıllık game development deneyimi. Unity / C# ana stack. App Store ve Play Store'da 50+ yayınlanmış oyun. Şu an Mimiko Technology'de (London, Remote) Lead Full-Stack Game Developer + Türkiye'de kendi şahıs şirketim üzerinden AI destekli SaaS ürünleri ve otomasyon yazılımları geliştiriyorum.",
       experienceTitle: "Deneyim",
       experience: [
         {
-          year: "2026 — şu an",
-          role: "Bağımsız Yazılım Geliştirici",
-          company: "Şahıs Şirketi · Türkiye",
+          year: "Eyl 2024 — Şu an",
+          role: "Lead Full-Stack Game Developer · Team Lead",
+          company: "Mimiko Technology · London, UK · Remote · Full-time",
           desc:
-            "Türkiye ve yurt dışından firmalara özel yazılım çözümleri sunuyorum. Web uygulamaları, AI entegrasyonları ve mobil ürünler.",
+            "Unity (frontend) + backend + DevOps üzerine ekip lideri. Multi-platform mobil ve PC oyun projelerinde teknik mimariyi yönetiyorum.",
         },
         {
-          year: "2022 — 2026",
-          role: "Full-stack Developer",
-          company: "Çeşitli projeler",
+          year: "2025 — Şu an",
+          role: "Bağımsız Geliştirici · Şahıs Şirketi",
+          company: "Türkiye · Freelance",
           desc:
-            "React + Node.js stack ile SaaS ürünleri ve iç araçlar geliştirdim.",
+            "Şirketler için AI destekli SaaS ürünleri, otomasyon araçları ve özel yazılım çözümleri. Claude Code, Next.js, Flutter, Firebase.",
+        },
+        {
+          year: "Oca 2023 — Eyl 2024",
+          role: "Game Developer",
+          company: "eleman.net · Ataşehir, İstanbul · Full-time",
+          desc:
+            "Meta Life: Your Second Home — App Store & Google Play yayınlanan mobil sosyal oyun üzerinde Unity / C# geliştirme.",
+        },
+        {
+          year: "Eyl 2022 — Kas 2022",
+          role: "Game Developer",
+          company: "Ace Games · İstanbul · Full-time",
+          desc:
+            "Hypercasual divizyonu kapatılana kadar Rope on Titan ve Squad League gibi başlıklarda Unity geliştirme.",
+        },
+        {
+          year: "Oca 2022 — Eyl 2022",
+          role: "Game Developer",
+          company: "Omnio Games · Ataşehir, İstanbul · Full-time",
+          desc:
+            "Hypercasual mobile portföyünde 10+ yayınlanmış oyun: Rope Archer, Knit Up!, Crossing Crowd, Golden Parents, Rope Down!, Diamond Factory! ve dahası.",
+        },
+        {
+          year: "Oca 2021 — Oca 2022",
+          role: "Game Developer",
+          company: "Kaiju Games İstanbul · Ataşehir · Full-time",
+          desc:
+            "İlk profesyonel game development pozisyonum. Mobil hypercasual & mid-core oyunlar üzerinde Unity geliştirme.",
         },
       ],
       educationTitle: "Eğitim",
       education: [
         {
-          year: "—",
-          role: "Bilgisayar Mühendisliği",
-          company: "Üniversite",
-          desc: "Lisans eğitimi.",
+          year: "2019 — 2023",
+          role: "Lisans · Yönetim Bilişim Sistemleri",
+          company: "Anadolu Üniversitesi",
+          desc: "Bachelor's degree, Management Information Systems.",
+        },
+        {
+          year: "2016 — 2018",
+          role: "Önlisans · Bilgisayar Programlama",
+          company: "Dokuz Eylül Üniversitesi",
+          desc: "Associate's degree, Computer Programming.",
+        },
+      ],
+      certificationsTitle: "Sertifikalar",
+      certifications: [
+        {
+          year: "Oca 2021",
+          role: "Mobil Oyun Bootcamp",
+          company: "Kodluyoruz",
+          desc: "Credential ID 47851801780552",
         },
       ],
       skillsTitle: "Yetkinlikler",
@@ -434,39 +494,39 @@ export const dictionaries = {
     hero: {
       tag: "Available — open to new projects",
       title: "Utku Bağdaş",
-      role: "Full-stack Developer",
+      role: "Lead Game Developer · SaaS Builder",
       lede:
-        "I design and build scalable web applications and custom software for companies.",
-      sub: "Modern stack, fast delivery, maintainable code.",
+        "6.5+ years building mobile and PC games with Unity. 50+ titles shipped on App Store and Play Store.",
+      sub: "For the past year, also building AI-powered SaaS products and automations for companies.",
       cta: "View projects",
       ctaSecondary: "Get in touch",
       rotatingPrefix: "I build:",
       rotatingItems: [
-        "Web applications",
-        "Mobile products",
-        "AI integrations",
-        "Enterprise SaaS",
-        "Game / 3D interfaces",
+        "Mobile games",
+        "Steam / PC games",
+        "AI-powered SaaS",
+        "Automation tools",
+        "AR / VR experiences",
       ],
       statusLocation: "Türkiye",
       statusLocaltime: "Local time",
-      statusFocus: "Currently building",
-      statusFocusValue: "Custom products with Claude Code",
+      statusFocus: "Currently",
+      statusFocusValue: "Lead Game Dev @ Mimiko + AI SaaS",
       scrollHint: "Scroll",
     },
     stats: {
       items: [
-        { value: "5+", label: "Years of experience" },
-        { value: "20+", label: "Projects shipped" },
-        { value: "10+", label: "Happy clients" },
-        { value: "24h", label: "Average reply time" },
+        { value: "6+", label: "Years of game dev" },
+        { value: "50+", label: "Titles shipped" },
+        { value: "5+", label: "Studios & companies" },
+        { value: "24h", label: "Reply time" },
       ],
     },
     about: {
       label: "01 — About",
-      title: "End-to-end software for companies",
+      title: "Lead Game Developer + AI-powered SaaS Builder",
       body:
-        "Through my sole proprietorship I deliver custom software to companies. I analyze your needs, choose the right architecture and own the full process: design, build, deploy and maintain.",
+        "Currently Lead Full-Stack Game Developer at Mimiko Technology (London, Remote), leading the team across Unity (frontend) + backend + DevOps. 6.5+ years in the Unity / C# ecosystem with 50+ titles shipped on App Store, Google Play, Steam and WebGL. Since 2025, also running my own sole proprietorship building AI-powered SaaS products, automation tools and custom software for companies.",
       principlesTitle: "How I work",
       principles: [
         {
@@ -478,8 +538,8 @@ export const dictionaries = {
           desc: "Visible progress every week, no hidden surprises.",
         },
         {
-          title: "Sustainable code",
-          desc: "Readable, testable code that anyone on your team can take over.",
+          title: "Game-grade code quality",
+          desc: "I bring the discipline of 60 FPS engines into SaaS products.",
         },
         {
           title: "Transparent communication",
@@ -489,24 +549,28 @@ export const dictionaries = {
       stackLabel: "Tools I work with",
       stackGroups: [
         {
-          name: "Frontend & Mobile",
-          items: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Flutter"],
+          name: "Game Engine & Tools",
+          items: ["Unity", "C#", ".NET", "DOTween", "Cinemachine", "Odin Inspector"],
         },
         {
-          name: "Backend",
-          items: ["Node.js", ".NET", "C#", "Postgres", "Prisma"],
+          name: "Multiplayer & Network",
+          items: ["Photon", "Mirror", "Netcode", "Fishnet"],
         },
         {
-          name: "Game & 3D",
-          items: ["Unity", "C#"],
+          name: "AR / VR",
+          items: ["ARKit", "AR Foundation", "Oculus SDK", "Unity XR"],
+        },
+        {
+          name: "Platforms",
+          items: ["iOS", "Android", "Steam", "WebGL"],
+        },
+        {
+          name: "SaaS / Web",
+          items: ["Next.js", "React", "TypeScript", "Tailwind", "Flutter", "Firebase"],
         },
         {
           name: "AI / Tooling",
           items: ["Claude Code", "Claude API", "OpenAI"],
-        },
-        {
-          name: "Infrastructure",
-          items: ["Vercel", "Firebase", "Cloudflare", "GitHub Actions"],
         },
       ],
     },
@@ -516,15 +580,15 @@ export const dictionaries = {
       items: [
         {
           k: "Building",
-          desc: "Products for my own venture and custom software for B2B clients — all with Claude Code.",
+          desc: "Lead Game Dev at Mimiko on Unity projects + AI-powered SaaS products through my own venture.",
         },
         {
-          k: "Reading",
-          desc: "Working in Public — Nadia Eghbal. On the makers of the internet.",
+          k: "Learning",
+          desc: "AI agent architectures, Claude Code workflows and in-engine LLM integrations for games.",
         },
         {
-          k: "Listening",
-          desc: "Lo-fi and ambient electronic. Brian Eno mixes for focus sessions.",
+          k: "Location",
+          desc: "Working remotely from Türkiye. Mimiko Technology is UK-based.",
         },
       ],
     },
@@ -541,61 +605,77 @@ export const dictionaries = {
       title: "How I got here",
       items: [
         {
-          year: "2026",
-          title: "Sole proprietorship & freelance",
+          year: "2025",
+          title: "Sole proprietorship · AI-powered SaaS",
           desc:
-            "Started serving companies through my own Türkiye-based business with custom software solutions.",
+            "Started my own sole proprietorship in Türkiye. Began offering AI-powered SaaS products and automation software to companies — bringing game-dev discipline into product development.",
         },
         {
           year: "2024",
-          title: "AI-first product development",
+          title: "Lead Full-Stack Game Developer · Mimiko Technology",
           desc:
-            "Doubled down on shipping faster, more sustainable code with Claude Code.",
+            "Joined Mimiko Technology (London) as Lead Full-Stack Game Developer. Unity + backend + DevOps + team lead, fully remote.",
+        },
+        {
+          year: "2023",
+          title: "Game Developer · eleman.net",
+          desc:
+            "Full-time Game Developer at eleman.net in Istanbul. Worked on the mobile social game Meta Life: Your Second Home.",
         },
         {
           year: "2022",
-          title: "Full-stack transition",
+          title: "Omnio Games + Ace Games · 10+ titles shipped",
           desc:
-            "Productizing experience as a full-stack developer in the React + Node.js ecosystem.",
+            "Game Developer across hypercasual and mid-core mobile studios. Shipped titles include Rope Archer, Knit Up!, Crossing Crowd, Squad League and more.",
+        },
+        {
+          year: "2021",
+          title: "Game Developer · Kaiju Games İstanbul",
+          desc:
+            "Started my professional game-dev career with my first full-time role. Earned the Kodluyoruz Mobile Game Bootcamp certificate the same year.",
         },
         {
           year: "2020",
-          title: "Started in software",
+          title: "Started with Unity",
           desc:
-            "Shipped my first projects with web fundamentals — HTML / CSS / JavaScript.",
+            "While studying Management Information Systems at Anadolu University, focused on Unity / C# game development.",
         },
       ],
     },
     pull: {
       quote:
-        "I turn software into real products — scalable, sustainable solutions that move your company forward.",
+        "I bring 6 years of 60-FPS game-engine discipline into SaaS products: playable, scalable, sustainable.",
       attribution: "Working philosophy",
     },
     services: {
       label: "02 — Services",
       title: "What I offer",
       subtitle:
-        "Packaged solutions for your needs — from a small corporate site to a fully productized SaaS.",
+        "From mobile and PC games to AI-powered SaaS — interactive software for companies.",
       items: [
         {
-          title: "Web Application Development",
-          desc: "Scalable SaaS and internal tools with Next.js, React and modern backend.",
-          bullets: ["Auth & roles", "Payments", "Admin dashboards"],
+          title: "Mobile & PC Game Development",
+          desc:
+            "Unity / C# game development across mobile, Steam and WebGL. 50+ titles shipped.",
+          bullets: ["Hypercasual & mid-core", "Multiplayer (Photon/Mirror)", "Live ops & analytics"],
         },
         {
-          title: "Corporate Websites",
-          desc: "SEO-friendly, fast and easy-to-manage company sites.",
-          bullets: ["CMS", "Multi-language", "Analytics"],
+          title: "AI-powered SaaS",
+          desc:
+            "SaaS products and internal tools powered by Claude and other LLMs.",
+          bullets: ["Smart automation", "Data intelligence", "Custom dashboards"],
         },
         {
-          title: "AI Integrations",
-          desc: "Bring Claude and other LLMs into your workflows.",
-          bullets: ["Auto-reporting", "Smart assistants", "Insights from data"],
+          title: "Automation & Workflows",
+          desc:
+            "Custom software and admin panels that automate your operational workflows.",
+          bullets: ["Workflow automation", "Internal tools", "Data integrations"],
         },
         {
-          title: "Maintenance & Support",
-          desc: "Continuous improvement, maintenance and technical support for existing products.",
-          bullets: ["Monthly retainers", "Bug fixes", "Performance work"],
+          title: "AR / VR & Interactive",
+          desc:
+            "Simulation, training and interactive experiences with Unity XR, ARKit, AR Foundation and Oculus SDK.",
+          bullets: ["AR product showcase", "VR training", "Interactive simulation"],
         },
       ],
     },
@@ -642,13 +722,13 @@ export const dictionaries = {
       items: [
         {
           quote:
-            "Transparent and fast from start to finish. We received exactly the product we wanted.",
+            "He brought game-grade technical discipline to our SaaS project. Performance, stability and delivery speed were well above expectations.",
           author: "Client Name",
           role: "Founder — Company A",
         },
         {
           quote:
-            "Solved a complex integration in a clean, sustainable way. Highly recommended.",
+            "The problem-solving reflexes from years of Unity made a real difference in our AI-powered internal tool.",
           author: "Client Name",
           role: "CTO — Company B",
         },
@@ -659,24 +739,24 @@ export const dictionaries = {
       title: "Frequently asked questions",
       items: [
         {
+          q: "You have a full-time job — how do you fit freelance projects?",
+          a: "I'm Lead Game Dev at Mimiko Technology (London, Remote) full-time. Freelance work goes through my sole proprietorship outside of those hours — clear timelines, realistic commitments.",
+        },
+        {
+          q: "Just game dev, or also web/SaaS?",
+          a: "Both. 6.5 years of Unity / C# game dev as my core. For the past year I've also been shipping AI-powered SaaS, automation and Flutter products for companies.",
+        },
+        {
           q: "How long does a project take?",
-          a: "It depends on scope. A typical corporate site lands in 2–3 weeks; a mid-sized web app in 6–12 weeks. After the discovery call I share a clear timeline.",
+          a: "Depends on scope. A hypercasual prototype in 1–2 weeks, a mid-core mobile game in 8–16 weeks, an AI-powered SaaS MVP in 4–8 weeks. After the discovery call I share a clear timeline.",
         },
         {
           q: "How does billing work?",
-          a: "I issue official invoices through my sole proprietorship for both Türkiye and international clients. We pick fixed-price or hourly depending on your needs.",
-        },
-        {
-          q: "Can you work with my existing team?",
-          a: "Yes. I can plug into your team, follow your code-review and engineering standards.",
-        },
-        {
-          q: "Do you offer post-launch support?",
-          a: "Yes. Monthly retainers covering bug fixes, small improvements, monitoring and performance work.",
+          a: "I issue official invoices through my sole proprietorship for both Türkiye and international clients. Fixed-price or hourly depending on your needs.",
         },
         {
           q: "Do you sign NDAs?",
-          a: "Yes, NDAs are standard for every project.",
+          a: "Yes, NDAs are standard for every project. Most of my prior studio work is also under NDA.",
         },
       ],
     },
@@ -728,43 +808,44 @@ export const dictionaries = {
         {
           name: "Hardware",
           items: [
-            { k: "Computer", v: "MacBook Pro / Windows desktop" },
-            { k: "Monitor", v: "27\" 4K on an ergonomic arm" },
+            { k: "Computer", v: "Dev workstation (Windows + macOS)" },
+            { k: "Test devices", v: "iPhone + Android + iPad (build verification)" },
+            { k: "Monitor", v: "27\" 4K + secondary display" },
             { k: "Keyboard", v: "Mechanical, tactile switches" },
             { k: "Mouse", v: "Logitech MX Master" },
-            { k: "Headphones", v: "Sony WH-1000XM5 (noise-cancelling)" },
-            { k: "Microphone", v: "Shure MV7 (calls / recording)" },
+            { k: "Headphones", v: "Noise-cancelling (long build sessions)" },
           ],
         },
         {
-          name: "Editor & Dev",
+          name: "Game Dev",
           items: [
-            { k: "Editor", v: "VS Code + Cursor" },
-            { k: "AI Pair", v: "Claude Code (terminal)" },
-            { k: "Terminal", v: "Warp" },
-            { k: "Browser", v: "Arc, Chrome (DevTools)" },
-            { k: "Theme", v: "Dark, accent green" },
-            { k: "Font", v: "Geist Mono, JetBrains Mono" },
+            { k: "Engine", v: "Unity (LTS)" },
+            { k: "IDE", v: "JetBrains Rider · Visual Studio" },
+            { k: "Plugins", v: "DOTween, Cinemachine, Odin Inspector" },
+            { k: "Multiplayer", v: "Photon, Mirror, Netcode, Fishnet" },
+            { k: "AR / VR", v: "ARKit, AR Foundation, Oculus SDK, Unity XR" },
+            { k: "Asset", v: "Aseprite, Blender (light)" },
           ],
         },
         {
-          name: "Tools & Services",
+          name: "SaaS & Web",
           items: [
-            { k: "Versioning", v: "Git, GitHub" },
+            { k: "Editor", v: "VS Code + Cursor + Claude Code" },
+            { k: "Stack", v: "Next.js, React, TypeScript, Tailwind, Flutter" },
+            { k: "DB", v: "Firebase, Postgres (Neon, Supabase)" },
             { k: "Hosting", v: "Vercel, Cloudflare" },
-            { k: "DB", v: "Postgres (Neon, Supabase)" },
-            { k: "Analytics", v: "Vercel Analytics, Plausible" },
-            { k: "Comms", v: "Linear, Slack, Telegram" },
-            { k: "Design", v: "Figma, FigJam" },
+            { k: "AI", v: "Claude API, Claude Code, OpenAI" },
+            { k: "Browser", v: "Arc, Chrome (DevTools)" },
           ],
         },
         {
-          name: "Browser extensions",
+          name: "Services & Tools",
           items: [
-            { k: "1Password", v: "Password manager" },
-            { k: "React DevTools", v: "Component inspection" },
-            { k: "Wappalyzer", v: "Detect site stack" },
-            { k: "JSON Viewer", v: "Format API responses" },
+            { k: "Versioning", v: "Git, GitHub, Plastic SCM (Unity)" },
+            { k: "Design", v: "Figma, Adobe Creative Cloud" },
+            { k: "Comms", v: "Slack, Discord, Telegram" },
+            { k: "Analytics", v: "Firebase, GameAnalytics, Vercel Analytics" },
+            { k: "PM", v: "Linear, Notion, Trello" },
           ],
         },
       ],
@@ -777,28 +858,24 @@ export const dictionaries = {
       updated: "Last updated",
       sections: [
         {
-          h: "Working on",
+          h: "Full-time",
           body:
-            "Building custom software for companies through my sole proprietorship. Mostly Next.js + TypeScript, with cross-platform Flutter and Unity work picking up.",
+            "Lead Full-Stack Game Developer at Mimiko Technology (London, Remote) — Unity / C# + backend + DevOps + team lead. Driving multi-platform mobile and PC game projects.",
+        },
+        {
+          h: "Freelance",
+          body:
+            "Through my sole proprietorship I build AI-powered SaaS products, automation tools and custom software for companies during off-hours. Currently shipping a few MVPs.",
         },
         {
           h: "Learning",
           body:
-            "Going deeper into Claude Code's agent-based dev workflows. Keeping practical notes on how AI plugs into a sustainable everyday cycle.",
-        },
-        {
-          h: "Reading",
-          body:
-            "Working in Public — Nadia Eghbal. On the economics of internet creators. Kent Beck's TDD classic on the side desk.",
-        },
-        {
-          h: "Listening",
-          body:
-            "Lo-fi, Brian Eno ambient and Helios mixes for focus. Coffee breaks: Hidden Things podcast.",
+            "Going deeper into Claude Code agent-based workflows and in-engine LLM integrations for games. Keeping practical notes on how AI plugs into both game-dev and SaaS cycles sustainably.",
         },
         {
           h: "Location",
-          body: "Türkiye, Istanbul. Working remotely, traveling on demand.",
+          body:
+            "Working remotely from Türkiye. Mimiko is UK-based; for freelance projects I work with companies in Türkiye and abroad across any sector.",
         },
       ],
     },
@@ -806,33 +883,76 @@ export const dictionaries = {
       title: "Curriculum Vitae",
       printLabel: "Print / Save as PDF",
       backHome: "Back home",
-      headline: "Full-stack Developer",
+      headline: "Lead Game Developer · SaaS Builder",
       summary:
-        "End-to-end product-focused full-stack developer with 5+ years of experience. Specialized in Next.js, React and TypeScript; with cross-domain shipping experience in .NET, Flutter and Unity.",
+        "6.5+ years of game development experience. Unity / C# core stack. 50+ titles shipped on App Store and Google Play. Currently Lead Full-Stack Game Developer at Mimiko Technology (London, Remote) and running a sole proprietorship in Türkiye delivering AI-powered SaaS products and automation software.",
       experienceTitle: "Experience",
       experience: [
         {
-          year: "2026 — present",
-          role: "Independent Software Developer",
-          company: "Sole Proprietorship · Türkiye",
+          year: "Sep 2024 — Present",
+          role: "Lead Full-Stack Game Developer · Team Lead",
+          company: "Mimiko Technology · London, UK · Remote · Full-time",
           desc:
-            "Custom software solutions for companies in Türkiye and abroad. Web applications, AI integrations and mobile products.",
+            "Team lead across Unity (frontend) + backend + DevOps. Owning the technical architecture of multi-platform mobile and PC game projects.",
         },
         {
-          year: "2022 — 2026",
-          role: "Full-stack Developer",
-          company: "Various projects",
+          year: "2025 — Present",
+          role: "Independent Developer · Sole Proprietorship",
+          company: "Türkiye · Freelance",
           desc:
-            "Shipped SaaS products and internal tools with the React + Node.js stack.",
+            "AI-powered SaaS products, automation tools and custom software for companies. Claude Code, Next.js, Flutter, Firebase.",
+        },
+        {
+          year: "Jan 2023 — Sep 2024",
+          role: "Game Developer",
+          company: "eleman.net · Ataşehir, Istanbul · Full-time",
+          desc:
+            "Unity / C# development on Meta Life: Your Second Home — a mobile social game published on App Store and Google Play.",
+        },
+        {
+          year: "Sep 2022 — Nov 2022",
+          role: "Game Developer",
+          company: "Ace Games · Istanbul · Full-time",
+          desc:
+            "Unity development on titles like Rope on Titan and Squad League before the hypercasual division was closed.",
+        },
+        {
+          year: "Jan 2022 — Sep 2022",
+          role: "Game Developer",
+          company: "Omnio Games · Ataşehir, Istanbul · Full-time",
+          desc:
+            "10+ shipped titles in the hypercasual mobile portfolio: Rope Archer, Knit Up!, Crossing Crowd, Golden Parents, Rope Down!, Diamond Factory! and more.",
+        },
+        {
+          year: "Jan 2021 — Jan 2022",
+          role: "Game Developer",
+          company: "Kaiju Games İstanbul · Ataşehir · Full-time",
+          desc:
+            "First professional game-dev role. Unity development on hypercasual & mid-core mobile games.",
         },
       ],
       educationTitle: "Education",
       education: [
         {
-          year: "—",
-          role: "Computer Engineering",
-          company: "University",
-          desc: "Bachelor's degree.",
+          year: "2019 — 2023",
+          role: "Bachelor's · Management Information Systems",
+          company: "Anadolu University",
+          desc: "General degree.",
+        },
+        {
+          year: "2016 — 2018",
+          role: "Associate's · Computer Programming",
+          company: "Dokuz Eylül University",
+          desc: "",
+        },
+      ],
+      certificationsTitle: "Certifications",
+      certifications: [
+        {
+          year: "Jan 2021",
+          role: "Mobile Game Bootcamp",
+          company: "Kodluyoruz",
+          desc: "Credential ID 47851801780552",
         },
       ],
       skillsTitle: "Skills",

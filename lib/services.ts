@@ -1,15 +1,15 @@
 export const serviceSlugs = [
-  "web-application",
-  "corporate-website",
-  "ai-integrations",
-  "maintenance-support",
+  "game-development",
+  "ai-saas",
+  "automation-tools",
+  "ar-vr-interactive",
 ] as const;
 
 export type ServiceSlug = (typeof serviceSlugs)[number];
 
-export const serviceIconMap: Record<ServiceSlug, "web" | "site" | "ai" | "support"> = {
-  "web-application": "web",
-  "corporate-website": "site",
-  "ai-integrations": "ai",
-  "maintenance-support": "support",
+export const serviceIconMap: Record<ServiceSlug, "game" | "saas" | "automation" | "ar"> = {
+  "game-development": "game",
+  "ai-saas": "saas",
+  "automation-tools": "automation",
+  "ar-vr-interactive": "ar",
 };

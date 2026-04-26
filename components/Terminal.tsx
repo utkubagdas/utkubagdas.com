@@ -41,17 +41,20 @@ const COMMANDS = [
 
 const FILES: Record<string, string> = {
   "about.md":
-    "Utku Bağdaş — Full-stack developer building scalable web apps and custom software for companies through a Türkiye-based sole proprietorship.",
+    "Utku Bağdaş — Lead Full-Stack Game Developer @ Mimiko Technology (London, Remote). 6.5+ years Unity / C#, 50+ titles shipped on App Store + Google Play. Also building AI-powered SaaS for companies through a Türkiye-based sole proprietorship.",
   "stack.json":
-    '{ "frontend": ["Next.js","React","TS","Tailwind","Flutter"], "backend": ["Node.js",".NET","C#","Postgres"], "ai": ["Claude Code","Claude API","OpenAI"], "infra": ["Vercel","Firebase","Cloudflare"] }',
+    '{ "engine": "Unity", "languages": ["C#", "TypeScript", "Dart"], "platforms": ["iOS", "Android", "Steam", "WebGL"], "multiplayer": ["Photon", "Mirror", "Netcode", "Fishnet"], "ar_vr": ["ARKit", "AR Foundation", "Oculus SDK", "Unity XR"], "saas": ["Next.js", "Flutter", "Firebase", "Claude API"] }',
   "process.txt":
-    "01 Discovery → 02 Architecture → 03 Build (weekly demos) → 04 Ship & Maintain.",
+    "01 Discovery → 02 Design & Architecture → 03 Build (weekly sprints) → 04 Ship & Live Ops.",
+  "shipped.txt":
+    "50+ titles · App Store + Google Play · Unity / C#\nFeatured: Meta Life · Rope on Titan · Squad League · Rope Archer · Knit Up! · Crossing Crowd",
 };
 
 const LIST_DIR = [
   "about.md",
   "stack.json",
   "process.txt",
+  "shipped.txt",
   "projects/",
   "services/",
   "blog/",
@@ -230,7 +233,7 @@ export default function Terminal({ locale }: { locale: Locale }) {
       case "whoami":
         out.push({
           kind: "out",
-          text: "Utku Bağdaş — Full-stack Developer · Istanbul, TR",
+          text: "Utku Bağdaş — Lead Game Developer · SaaS Builder · Türkiye",
           tone: "white",
         });
         break;

@@ -5,7 +5,7 @@ import SectionHeading from "./SectionHeading";
 import ServiceIcon from "./ServiceIcon";
 import TiltCard from "./TiltCard";
 
-const icons = ["web", "site", "ai", "support"] as const;
+const icons = ["game", "saas", "automation", "ar"] as const;
 
 export default function Services({ t, locale }: { t: Dictionary; locale: Locale }) {
   return (

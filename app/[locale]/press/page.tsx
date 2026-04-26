@@ -48,15 +48,15 @@ export default async function PressPage({
   const bios = l === "tr"
     ? {
         short:
-          "Utku Bağdaş, şirketler için ölçeklenebilir web uygulamaları ve özel yazılım çözümleri geliştiren Türkiye merkezli bir full-stack developer'dır.",
+          "Utku Bağdaş, Türkiye merkezli, 6.5+ yıl Unity / C# deneyimine ve App Store + Google Play'de 50+ yayınlanmış oyuna sahip bir Lead Game Developer'dır. Şu an Mimiko Technology'de (London, Remote) Lead Full-Stack Game Developer olarak görev yapıyor; aynı zamanda kendi şahıs şirketi üzerinden şirketlere AI destekli SaaS ürünleri ve otomasyon yazılımları sunuyor.",
         medium:
-          "Utku Bağdaş, kendi şahıs şirketi üzerinden firmalara uçtan uca yazılım çözümleri sunan, 5+ yıllık deneyime sahip bir full-stack developer'dır. Next.js, TypeScript ve modern web yığınında uzman olmakla birlikte, .NET / C#, Flutter ve Unity ile çapraz alan ürünleri de teslim etmektedir. Geliştirme süreçlerine AI'ı (Claude Code) entegre ederek daha hızlı ve sürdürülebilir teslimatlar yapar.",
+          "Utku Bağdaş, Ocak 2020'den itibaren Unity ekosisteminde mobil ve PC oyunları geliştiren, 6.5+ yıllık deneyime sahip bir Lead Game Developer'dır. Kariyeri boyunca Kaiju Games, Omnio Games, Ace Games ve eleman.net gibi stüdyolarda yer almış, App Store ve Google Play'de 50+ yayınlanmış başlığa katkıda bulunmuştur. Eylül 2024'ten itibaren London merkezli Mimiko Technology'de Lead Full-Stack Game Developer olarak Unity (frontend) + backend + DevOps ekip liderliği yapmaktadır. 2025'ten beri kendi şahıs şirketi üzerinden şirketlere AI destekli SaaS ürünleri, otomasyon araçları ve özel yazılımlar üretmektedir; Anadolu Üniversitesi (Yönetim Bilişim Sistemleri, Lisans) ve Dokuz Eylül Üniversitesi (Bilgisayar Programlama, Önlisans) mezunudur.",
       }
     : {
         short:
-          "Utku Bağdaş is a Türkiye-based full-stack developer building scalable web applications and custom software solutions for companies.",
+          "Utku Bağdaş is a Türkiye-based Lead Game Developer with 6.5+ years of Unity / C# experience and 50+ titles shipped on App Store and Google Play. He is currently Lead Full-Stack Game Developer at Mimiko Technology (London, Remote) while also running his own sole proprietorship building AI-powered SaaS products and automation software for companies.",
         medium:
-          "Utku Bağdaş is a full-stack developer with 5+ years of experience, delivering end-to-end software solutions to companies through his sole proprietorship. Specialized in Next.js, TypeScript and the modern web stack, he also ships cross-domain products in .NET / C#, Flutter and Unity. He integrates AI (Claude Code) into his development process for faster, more sustainable delivery.",
+          "Utku Bağdaş is a Lead Game Developer with 6.5+ years of experience building mobile and PC games in the Unity ecosystem since January 2020. Across his career at Kaiju Games, Omnio Games, Ace Games and eleman.net, he has contributed to 50+ titles published on App Store and Google Play. Since September 2024 he has been Lead Full-Stack Game Developer at London-based Mimiko Technology, leading the team across Unity (frontend), backend and DevOps. Since 2025 he also runs a sole proprietorship in Türkiye, delivering AI-powered SaaS products, automation tools and custom software to companies. He holds a Bachelor's in Management Information Systems from Anadolu University and an Associate's in Computer Programming from Dokuz Eylül University.",
       };
 
   return (

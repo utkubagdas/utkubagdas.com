@@ -31,17 +31,17 @@ export async function generateMetadata({
 }
 
 const skills = [
-  "Next.js / React",
-  "TypeScript",
-  "Tailwind CSS",
-  "Node.js",
-  ".NET / C#",
-  "Flutter",
   "Unity",
-  "Postgres / Prisma",
+  "C# / .NET",
+  "Photon · Mirror · Netcode · Fishnet",
+  "ARKit · AR Foundation",
+  "Oculus SDK · Unity XR",
+  "iOS · Android · Steam · WebGL",
+  "DOTween · Cinemachine · Odin Inspector",
+  "Next.js · React · TypeScript",
+  "Flutter",
   "Firebase",
-  "Vercel / Cloudflare",
-  "Claude API / OpenAI",
+  "Claude Code · Claude API · OpenAI",
 ];
 
 export default async function CvPage({
@@ -99,6 +99,18 @@ export default async function CvPage({
             role={e.role}
             company={e.company}
             desc={e.desc}
+          />
+        ))}
+      </CvSection>
+
+      <CvSection title={t.cv.certificationsTitle}>
+        {t.cv.certifications.map((c) => (
+          <CvEntry
+            key={`${c.year}-${c.role}`}
+            year={c.year}
+            role={c.role}
+            company={c.company}
+            desc={c.desc}
           />
         ))}
       </CvSection>
