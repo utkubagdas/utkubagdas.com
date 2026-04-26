@@ -31,15 +31,11 @@ export default function HeroTitle({ text }: { text: string }) {
       ref={ref}
       onMouseMove={onMove}
       onMouseLeave={onLeave}
-      className="reveal-stage font-display italic leading-[1.02] tracking-[-0.02em] text-white transition-transform duration-300 ease-out will-change-transform"
+      className="font-display italic leading-[1.02] tracking-[-0.02em] text-white transition-transform duration-300 ease-out will-change-transform"
       style={{
         fontWeight: 400,
         fontSize: "clamp(3.5rem, 9vw, 7.5rem)",
         fontVariationSettings: "'opsz' 144, 'SOFT' 50",
-        background: "linear-gradient(140deg, #ffffff 0%, #ffffff 55%, rgba(52,211,153,0.85) 100%)",
-        WebkitBackgroundClip: "text",
-        WebkitTextFillColor: "transparent",
-        backgroundClip: "text",
       }}
       aria-label={text}
     >
@@ -47,18 +43,13 @@ export default function HeroTitle({ text }: { text: string }) {
         <span
           key={i}
           aria-hidden
-          className="reveal-char"
-          style={{
-            display: "inline-block",
-            animationDelay: `${i * 40}ms`,
-          }}
+          className="reveal-char inline-block"
+          style={{ animationDelay: `${i * 40}ms` }}
         >
           {c === " " ? " " : c}
         </span>
       ))}
-      <span className="text-accent" style={{ WebkitTextFillColor: "#34d399" }}>
-        .
-      </span>
+      <span className="not-italic text-accent">.</span>
     </h1>
   );
 }
