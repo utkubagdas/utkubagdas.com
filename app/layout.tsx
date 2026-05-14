@@ -25,24 +25,24 @@ const fraunces = Fraunces({
 export const metadata: Metadata = {
   metadataBase: new URL("https://utkubagdas.com"),
   title: {
-    default: "Utku Bağdaş — Full-stack Developer",
+    default: "Utku Bağdaş — Lead Game Developer",
     template: "%s — Utku Bağdaş",
   },
   description:
-    "Full-stack developer building scalable web applications and custom software for companies.",
+    "Lead Game Developer with 6.5+ years of Unity and 50+ titles shipped. Portfolio and personal projects.",
   openGraph: {
-    title: "Utku Bağdaş — Full-stack Developer",
+    title: "Utku Bağdaş — Lead Game Developer",
     description:
-      "Full-stack developer building scalable web applications and custom software for companies.",
+      "Lead Game Developer with 6.5+ years of Unity and 50+ titles shipped. Portfolio and personal projects.",
     url: "https://utkubagdas.com",
     siteName: "Utku Bağdaş",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Utku Bağdaş — Full-stack Developer",
+    title: "Utku Bağdaş — Lead Game Developer",
     description:
-      "Full-stack developer building scalable web applications and custom software for companies.",
+      "Lead Game Developer with 6.5+ years of Unity and 50+ titles shipped. Portfolio and personal projects.",
   },
   robots: { index: true, follow: true },
   manifest: "/manifest.webmanifest",

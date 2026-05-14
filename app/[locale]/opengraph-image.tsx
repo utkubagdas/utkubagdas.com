@@ -12,11 +12,11 @@ export default async function OpengraphImage({
 }) {
   const isTr = params.locale === "tr";
   const lede = isTr
-    ? "Şirketler için ölçeklenebilir web uygulamaları ve özel yazılım çözümleri."
-    : "Scalable web applications and custom software for companies.";
+    ? "6.5+ yıl Unity. App Store & Google Play'de 50+ yayınlanmış oyun."
+    : "6.5+ years of Unity. 50+ titles shipped on App Store & Google Play.";
   const tag = isTr
-    ? "Müsait — yeni projelere açık"
-    : "Available — open to new projects";
+    ? "Portfolyo · 2020 — şu an"
+    : "Portfolio · 2020 — present";
 
   return new ImageResponse(
     (
